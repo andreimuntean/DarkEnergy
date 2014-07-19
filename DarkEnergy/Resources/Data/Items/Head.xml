@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<items>
+  <item id="120000">
+    <name language="en-US">Dark Cloth Hood</name>
+    <value>15</value>
+    <attributes armor="1" strength="0" intuition="0" reflexes="0" vitality="0" vigor="0" />
+  </item>
+  <item id="120001">
+    <name language="en-US">Light Cloth Hood</name>
+    <value>15</value>
+    <attributes armor="1" strength="0" intuition="0" reflexes="0" vitality="0" vigor="0" />
+  </item>
+</items>

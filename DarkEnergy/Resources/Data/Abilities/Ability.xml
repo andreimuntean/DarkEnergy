@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<abilities>
+  <!--Assault-->
+  <ability id="100000">
+    <name language="en-US">Assault</name>
+    <rank current="1" highest="7" nextId="100001"/>
+    <icon id="10000"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="2" maxValue="5" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100001">
+    <name language="en-US">Assault</name>
+    <rank current="2" highest="7" previousId="100000" nextId="100002"/>
+    <icon id="10000"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="4" maxValue="10" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100002">
+    <name language="en-US">Assault</name>
+    <rank current="3" highest="7" previousId="100001" nextId="100003"/>
+    <icon id="10000"/>
+    <requiredLevel>3</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="7" maxValue="16" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100003">
+    <name language="en-US">Assault</name>
+    <rank current="4" highest="7" previousId="100002" nextId="100004"/>
+    <icon id="10000"/>
+    <requiredLevel>5</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="11" maxValue="23" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100004">
+    <name language="en-US">Assault</name>
+    <rank current="5" highest="7" previousId="100003" nextId="100005"/>
+    <icon id="10000"/>
+    <requiredLevel>7</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="16" maxValue="31" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100005">
+    <name language="en-US">Assault</name>
+    <rank current="6" highest="7" previousId="100004" nextId="100006"/>
+    <icon id="10000"/>
+    <requiredLevel>9</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="22" maxValue="40" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100006">
+    <name language="en-US">Assault</name>
+    <rank current="7" highest="7" previousId="100005"/>
+    <icon id="10000"/>
+    <requiredLevel>11</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="29" maxValue="50" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Cleave-->
+  <ability id="100010">
+    <name language="en-US">Cleave</name>
+    <rank current="1" highest="4" nextId="100011"/>
+    <icon id="10001"/>
+    <requiredLevel>2</requiredLevel>
+    <darkEnergy>25</darkEnergy>
+    <effect name="PhysicalDamage" minValue="1" maxValue="4" areaEffect="true" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100011">
+    <name language="en-US">Cleave</name>
+    <rank current="2" highest="4" previousId="100010" nextId="100012"/>
+    <icon id="10001"/>
+    <requiredLevel>4</requiredLevel>
+    <darkEnergy>30</darkEnergy>
+    <effect name="PhysicalDamage" minValue="5" maxValue="10" areaEffect="true" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100012">
+    <name language="en-US">Cleave</name>
+    <rank current="3" highest="4" previousId="100011" nextId="100013"/>
+    <icon id="10001"/>
+    <requiredLevel>8</requiredLevel>
+    <darkEnergy>35</darkEnergy>
+    <effect name="PhysicalDamage" minValue="10" maxValue="17" areaEffect="true" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100013">
+    <name language="en-US">Cleave</name>
+    <rank current="4" highest="4" previousId="100012"/>
+    <icon id="10001"/>
+    <requiredLevel>14</requiredLevel>
+    <darkEnergy>40</darkEnergy>
+    <effect name="PhysicalDamage" minValue="16" maxValue="25" areaEffect="true" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Frenzy-->
+  <ability id="100020">
+    <name language="en-US">Frenzy</name>
+    <rank current="1" highest="7" nextId="100021"/>
+    <icon id="10002"/>
+    <requiredLevel>7</requiredLevel>
+    <darkEnergy>30</darkEnergy>
+    <effect name="IncreasePhysicalDamagePercentage" minValue="400" maxValue="400" roundsActive="3" />
+    <animation id="5" visual="10002" />
+    <targets self="true" />
+  </ability>
+  <ability id="100021">
+    <name language="en-US">Frenzy</name>
+    <rank current="2" highest="7" previousId="100020" nextId="100022"/>
+    <icon id="10002"/>
+    <requiredLevel>10</requiredLevel>
+    <darkEnergy>35</darkEnergy>
+    <effect name="IncreasePhysicalDamagePercentage" minValue="500" maxValue="500" roundsActive="3"  />
+    <animation id="5" visual="10002" />
+    <targets self="true" />
+  </ability>
+  <ability id="100022">
+    <name language="en-US">Frenzy</name>
+    <rank current="3" highest="7" previousId="100021" nextId="100023"/>
+    <icon id="10002"/>
+    <requiredLevel>13</requiredLevel>
+    <darkEnergy>40</darkEnergy>
+    <effect name="IncreasePhysicalDamagePercentage" minValue="600" maxValue="600" roundsActive="3"  />
+    <animation id="5" visual="10002" />
+    <targets self="true" />
+  </ability>
+  <ability id="100023">
+    <name language="en-US">Frenzy</name>
+    <rank current="4" highest="7" previousId="100022" nextId="100024"/>
+    <icon id="10002"/>
+    <requiredLevel>16</requiredLevel>
+    <darkEnergy>45</darkEnergy>
+    <effect name="IncreasePhysicalDamagePercentage" minValue="700" maxValue="700" roundsActive="3"  />
+    <animation id="5" visual="10002" />
+    <targets self="true" />
+  </ability>
+  <ability id="100024">
+    <name language="en-US">Frenzy</name>
+    <rank current="5" highest="7" previousId="100023" nextId="100025"/>
+    <icon id="10002"/>
+    <requiredLevel>19</requiredLevel>
+    <darkEnergy>50</darkEnergy>
+    <effect name="IncreasePhysicalDamagePercentage" minValue="800" maxValue="800" roundsActive="3"  />
+    <animation id="5" visual="10002" />
+    <targets self="true" />
+  </ability>
+  <ability id="100025">
+    <name language="en-US">Frenzy</name>
+    <rank current="6" highest="7" previousId="100024" nextId="100026"/>
+    <icon id="10002"/>
+    <requiredLevel>22</requiredLevel>
+    <darkEnergy>55</darkEnergy>
+    <effect name="IncreasePhysicalDamagePercentage" minValue="900" maxValue="900" roundsActive="3"  />
+    <animation id="5" visual="10002" />
+    <targets self="true" />
+  </ability>
+  <ability id="100026">
+    <name language="en-US">Frenzy</name>
+    <rank current="7" highest="7" previousId="100025"/>
+    <icon id="10002"/>
+    <requiredLevel>25</requiredLevel>
+    <darkEnergy>60</darkEnergy>
+    <effect name="IncreasePhysicalDamagePercentage" minValue="1000" maxValue="1000" roundsActive="3"  />
+    <animation id="5" visual="10002" />
+    <targets self="true" />
+  </ability>
+  
+  <!--Impale-->
+  <ability id="100030">
+    <name language="en-US">Impale</name>
+    <rank current="1" highest="3" nextId="100031"/>
+    <icon id="10003"/>
+    <requiredLevel>10</requiredLevel>
+    <darkEnergy>40</darkEnergy>
+    <effect name="PhysicalDamage" minValue="10" maxValue="20" />
+    <effect name="ShockDamage" minValue="5" maxValue="10" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100031">
+    <name language="en-US">Impale</name>
+    <rank current="2" highest="3" previousId="100030" nextId="100032"/>
+    <icon id="10003"/>
+    <requiredLevel>20</requiredLevel>
+    <darkEnergy>45</darkEnergy>
+    <effect name="PhysicalDamage" minValue="20" maxValue="40" />
+    <effect name="ShockDamage" minValue="10" maxValue="20" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100032">
+    <name language="en-US">Impale</name>
+    <rank current="3" highest="3" previousId="100031"/>
+    <icon id="10003"/>
+    <requiredLevel>30</requiredLevel>
+    <darkEnergy>50</darkEnergy>
+    <effect name="PhysicalDamage" minValue="30" maxValue="60" />
+    <effect name="ShockDamage" minValue="15" maxValue="30" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+
+  <!--Infest-->
+  <ability id="100040">
+    <name language="en-US">Infest</name>
+    <rank current="1" highest="4" nextId="100041"/>
+    <icon id="10004"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>25</darkEnergy>
+    <effect name="DarknessDamage" minValue="1" maxValue="4" areaEffect="true" />
+    <animation id="4" visual="10003" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100041">
+    <name language="en-US">Infest</name>
+    <rank current="2" highest="4" previousId="100040" nextId="100042"/>
+    <icon id="10004"/>
+    <requiredLevel>4</requiredLevel>
+    <darkEnergy>30</darkEnergy>
+    <effect name="DarknessDamage" minValue="5" maxValue="10" areaEffect="true" />
+    <animation id="4" visual="10003" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100042">
+    <name language="en-US">Infest</name>
+    <rank current="3" highest="4" previousId="100041" nextId="100043"/>
+    <icon id="10004"/>
+    <requiredLevel>8</requiredLevel>
+    <darkEnergy>35</darkEnergy>
+    <effect name="DarknessDamage" minValue="10" maxValue="17" areaEffect="true" />
+    <animation id="4" visual="10003" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100043">
+    <name language="en-US">Infest</name>
+    <rank current="4" highest="4" previousId="100042"/>
+    <icon id="10004"/>
+    <requiredLevel>14</requiredLevel>
+    <darkEnergy>40</darkEnergy>
+    <effect name="DarknessDamage" minValue="16" maxValue="25" areaEffect="true" />
+    <animation id="4" visual="10003" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Drain Life-->
+  <ability id="100050">
+    <name language="en-US">Drain Life</name>
+    <rank current="1" highest="3" nextId="100051"/>
+    <icon id="10005"/>
+    <requiredLevel>3</requiredLevel>
+    <darkEnergy>25</darkEnergy>
+    <effect name="DrainLife" minValue="1" maxValue="5" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100051">
+    <name language="en-US">Drain Life</name>
+    <rank current="2" highest="3" previousId="100050" nextId="100052"/>
+    <icon id="10005"/>
+    <requiredLevel>7</requiredLevel>
+    <darkEnergy>30</darkEnergy>
+    <effect name="DrainLife" minValue="6" maxValue="14" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100052">
+    <name language="en-US">Drain Life</name>
+    <rank current="3" highest="3" previousId="100051"/>
+    <icon id="10005"/>
+    <requiredLevel>11</requiredLevel>
+    <darkEnergy>35</darkEnergy>
+    <effect name="DrainLife" minValue="11" maxValue="23" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Frost Blast-->
+  <ability id="100060">
+    <name language="en-US">Frost Blast</name>
+    <rank current="1" highest="3" nextId="100061"/>
+    <icon id="10006"/>
+    <requiredLevel>8</requiredLevel>
+    <darkEnergy>40</darkEnergy>
+    <effect name="IceDamage" minValue="5" maxValue="10" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100061">
+    <name language="en-US">Frost Blast</name>
+    <rank current="2" highest="3" previousId="100060" nextId="100062"/>
+    <icon id="10006"/>
+    <requiredLevel>13</requiredLevel>
+    <darkEnergy>45</darkEnergy>
+    <effect name="IceDamage" minValue="15" maxValue="25" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100062">
+    <name language="en-US">Frost Blast</name>
+    <rank current="3" highest="3" previousId="100061"/>
+    <icon id="10006"/>
+    <requiredLevel>18</requiredLevel>
+    <darkEnergy>50</darkEnergy>
+    <effect name="IceDamage" minValue="25" maxValue="35" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Harvest Souls-->
+  <ability id="100070">
+    <name language="en-US">Harvest Souls</name>
+    <rank current="1" highest="3" nextId="100071"/>
+    <icon id="10007"/>
+    <requiredLevel>20</requiredLevel>
+    <darkEnergy>70</darkEnergy>
+    <effect name="DrainLife" minValue="5" maxValue="10" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100071">
+    <name language="en-US">Harvest Souls</name>
+    <rank current="2" highest="3" previousId="100070" nextId="100072"/>
+    <icon id="10007"/>
+    <requiredLevel>24</requiredLevel>
+    <darkEnergy>80</darkEnergy>
+    <effect name="DrainLife" minValue="15" maxValue="30" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100072">
+    <name language="en-US">Harvest Souls</name>
+    <rank current="3" highest="3" previousId="100071"/>
+    <icon id="10007"/>
+    <requiredLevel>28</requiredLevel>
+    <darkEnergy>90</darkEnergy>
+    <effect name="DrainLife" minValue="30" maxValue="60" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Healing Touch-->
+  <ability id="100080">
+    <name language="en-US">Healing Touch</name>
+    <rank current="1" highest="7" nextId="100081"/>
+    <icon id="10008"/>
+    <requiredLevel>4</requiredLevel>
+    <darkEnergy>20</darkEnergy>
+    <effect name="Heal" minValue="1" maxValue="4" />
+    <effect name="AbsorbDamagePercentage" minValue="150" maxValue="250" roundsActive="2" />
+    <animation id="5" />
+    <targets self="true" friendly="true" />
+  </ability>
+  <ability id="100081">
+    <name language="en-US">Healing Touch</name>
+    <rank current="2" highest="7" nextId="100082"/>
+    <icon id="10008"/>
+    <requiredLevel>6</requiredLevel>
+    <darkEnergy>25</darkEnergy>
+    <effect name="Heal" minValue="5" maxValue="10" />
+    <effect name="AbsorbDamagePercentage" minValue="175" maxValue="275" roundsActive="2" />
+    <animation id="5" />
+    <targets self="true" friendly="true" />
+  </ability>
+  <ability id="100082">
+    <name language="en-US">Healing Touch</name>
+    <rank current="3" highest="7" previousId="100081" nextId="100083"/>
+    <icon id="10008"/>
+    <requiredLevel>8</requiredLevel>
+    <darkEnergy>30</darkEnergy>
+    <effect name="Heal" minValue="9" maxValue="16" />
+    <effect name="AbsorbDamagePercentage" minValue="200" maxValue="300" roundsActive="2" />
+    <animation id="5" />
+    <targets self="true" friendly="true" />
+  </ability>
+  <ability id="100083">
+    <name language="en-US">Healing Touch</name>
+    <rank current="4" highest="7" previousId="100082" nextId="100084"/>
+    <icon id="10008"/>
+    <requiredLevel>10</requiredLevel>
+    <darkEnergy>35</darkEnergy>
+    <effect name="Heal" minValue="13" maxValue="22" />
+    <effect name="AbsorbDamagePercentage" minValue="225" maxValue="325" roundsActive="2" />
+    <animation id="5" />
+    <targets self="true" friendly="true" />
+  </ability>
+  <ability id="100084">
+    <name language="en-US">Healing Touch</name>
+    <rank current="5" highest="7" previousId="100083" nextId="100085"/>
+    <icon id="10008"/>
+    <requiredLevel>12</requiredLevel>
+    <darkEnergy>40</darkEnergy>
+    <effect name="Heal" minValue="17" maxValue="28" />
+    <effect name="AbsorbDamagePercentage" minValue="250" maxValue="350" roundsActive="2" />
+    <animation id="5" />
+    <targets self="true" friendly="true" />
+  </ability>
+  <ability id="100085">
+    <name language="en-US">Healing Touch</name>
+    <rank current="6" highest="7" previousId="100084" nextId="100086"/>
+    <icon id="10008"/>
+    <requiredLevel>14</requiredLevel>
+    <darkEnergy>45</darkEnergy>
+    <effect name="Heal" minValue="21" maxValue="34" />
+    <effect name="AbsorbDamagePercentage" minValue="275" maxValue="375" roundsActive="2" />
+    <animation id="5" />
+    <targets self="true" friendly="true" />
+  </ability>
+  <ability id="100086">
+    <name language="en-US">Healing Touch</name>
+    <rank current="7" highest="7" previousId="100085"/>
+    <icon id="10008"/>
+    <requiredLevel>14</requiredLevel>
+    <darkEnergy>50</darkEnergy>
+    <effect name="Heal" minValue="25" maxValue="40" />
+    <effect name="AbsorbDamagePercentage" minValue="300" maxValue="400" roundsActive="2" />
+    <animation id="5" />
+    <targets self="true" friendly="true" />
+  </ability>
+  
+  <!--Judgement-->
+  <ability id="100090">
+    <name language="en-US">Judgement</name>
+    <rank current="1" highest="3" nextId="100091"/>
+    <icon id="10009"/>
+    <requiredLevel>6</requiredLevel>
+    <darkEnergy>30</darkEnergy>
+    <effect name="LightDamage" minValue="6" maxValue="17" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100091">
+    <name language="en-US">Judgement</name>
+    <rank current="2" highest="3" previousId="100090" nextId="100092"/>
+    <icon id="10009"/>
+    <requiredLevel>10</requiredLevel>
+    <darkEnergy>35</darkEnergy>
+    <effect name="LightDamage" minValue="15" maxValue="28" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100092">
+    <name language="en-US">Judgement</name>
+    <rank current="3" highest="3" previousId="100091"/>
+    <icon id="10009"/>
+    <requiredLevel>14</requiredLevel>
+    <darkEnergy>40</darkEnergy>
+    <effect name="LightDamage" minValue="24" maxValue="39" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Resurrection-->
+  <ability id="100100">
+    <name language="en-US">Resurrection</name>
+    <rank current="1" highest="3" nextId="100101"/>
+    <icon id="10010"/>
+    <requiredLevel>9</requiredLevel>
+    <darkEnergy>60</darkEnergy>
+    <effect name="Revive" minValue="40" maxValue="40" />
+    <animation id="5" />
+    <targets friendly="true" />
+  </ability>
+  <ability id="100101">
+    <name language="en-US">Resurrection</name>
+    <rank current="2" highest="3" previousId="100100" nextId="100102"/>
+    <icon id="10010"/>
+    <requiredLevel>15</requiredLevel>
+    <darkEnergy>70</darkEnergy>
+    <effect name="Revive" minValue="60" maxValue="60" />
+    <animation id="5" />
+    <targets friendly="true" />
+  </ability>
+  <ability id="100102">
+    <name language="en-US">Resurrection</name>
+    <rank current="3" highest="3" previousId="100101"/>
+    <icon id="10010"/>
+    <requiredLevel>21</requiredLevel>
+    <darkEnergy>80</darkEnergy>
+    <effect name="Revive" minValue="80" maxValue="80" />
+    <animation id="5" />
+    <targets friendly="true" />
+  </ability>
+    
+  <!--Heavenly Wrath-->
+  <ability id="100110">
+    <name language="en-US">Heavenly Wrath</name>
+    <rank current="1" highest="3" nextId="100111"/>
+    <icon id="10011"/>
+    <requiredLevel>15</requiredLevel>
+    <darkEnergy>70</darkEnergy>
+    <effect name="FireDamage" minValue="10" maxValue="30" />
+    <effect name="LightDamage" minValue="5" maxValue="10" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100111">
+    <name language="en-US">Heavenly Wrath</name>
+    <rank current="2" highest="3" previousId="100110" nextId="100112"/>
+    <icon id="10011"/>
+    <requiredLevel>22</requiredLevel>
+    <darkEnergy>75</darkEnergy>
+    <effect name="FireDamage" minValue="20" maxValue="50" />
+    <effect name="LightDamage" minValue="10" maxValue="20" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+  <ability id="100112">
+    <name language="en-US">Heavenly Wrath</name>
+    <rank current="3" highest="3" previousId="100111"/>
+    <icon id="10011"/>
+    <requiredLevel>30</requiredLevel>
+    <darkEnergy>80</darkEnergy>
+    <effect name="FireDamage" minValue="30" maxValue="70" />
+    <effect name="LightDamage" minValue="15" maxValue="30" areaEffect="true" />
+    <animation id="4" />
+    <targets hostile="true" />
+  </ability>
+
+  <!--Rip-->
+  <ability id="200000">
+    <name language="en-US">Rip</name>
+    <rank current="1" highest="1" />
+    <icon id="10000"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="5" maxValue="12" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Heal-->
+  <ability id="200005">
+    <name language="en-US">Heal</name>
+    <rank current="1" highest="1" />
+    <icon id="10008"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>35</darkEnergy>
+    <effect name="Heal" minValue="2" maxValue="10" />
+    <animation id="5" />
+    <targets self="true" friendly="true" />
+  </ability>
+
+  <!--Bite-->
+  <ability id="200010">
+    <name language="en-US">Bite</name>
+    <rank current="1" highest="1" />
+    <icon id="10000"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>60</darkEnergy>
+    <effect name="DrainLife" minValue="1" maxValue="15" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+
+  <!--Frenzy (Special)-->
+  <ability id="200020">
+    <name language="en-US">Frenzy</name>
+    <rank current="1" highest="1" />
+    <icon id="10002"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>40</darkEnergy>
+    <effect name="IncreasePhysicalDamagePercentage" minValue="700" maxValue="700" roundsActive="3" />
+    <animation id="5" visual="10002" />
+    <targets self="true" />
+  </ability>
+
+  <!--Venom Spit-->
+  <ability id="200030">
+    <name language="en-US">Venom Spit</name>
+    <rank current="1" highest="1" />
+    <icon id="10004"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>25</darkEnergy>
+    <effect name="EarthDamage" minValue="3" maxValue="7" areaEffect="false" />
+    <animation id="4" visual="10004" />
+    <targets hostile="true" />
+  </ability>
+  
+  <!--Assault (Special)-->
+  <ability id="200040">
+    <name language="en-US">Assault</name>
+    <rank current="1" highest="1" />
+    <icon id="10000"/>
+    <requiredLevel>1</requiredLevel>
+    <darkEnergy>0</darkEnergy>
+    <effect name="PhysicalDamage" minValue="3" maxValue="12" />
+    <animation id="1" />
+    <targets hostile="true" />
+  </ability>
+</abilities>

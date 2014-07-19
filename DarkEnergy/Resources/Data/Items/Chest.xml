@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+<items>
+  <item id="140000">
+    <name language="en-US">Dark Cloth Shirt</name>
+    <value>1</value>
+    <attributes armor="2" strength="0" intuition="0" reflexes="0" vitality="1" vigor="0" />
+  </item>
+  <item id="140001">
+    <name language="en-US">Light Cloth Shirt</name>
+    <value>1</value>
+    <attributes armor="2" strength="0" intuition="0" reflexes="0" vitality="1" vigor="0" />
+  </item>
+  <item id="140002">
+    <name language="en-US">Vanquisher Battleplate</name>
+    <value>15000</value>
+    <attributes armor="25" strength="7" intuition="2" reflexes="0" vitality="8" vigor="5" />
+  </item>
+  <item id="140003">
+    <name language="en-US">Mercenary Tunic</name>
+    <value>11000</value>
+    <attributes armor="8" strength="2" intuition="0" reflexes="6" vitality="3" vigor="5" />
+  </item>
+  <item id="140004">
+    <name language="en-US">Steel Breastplate</name>
+    <value>10000</value>
+    <attributes armor="20" strength="5" intuition="0" reflexes="0" vitality="5" vigor="3" />
+  </item>
+  <item id="140005">
+    <name language="en-US">Templar Cuirass</name>
+    <value>20000</value>
+    <attributes armor="23" strength="6" intuition="6" reflexes="0" vitality="6" vigor="3" />
+  </item>
+  <item id="140006">
+    <name language="en-US">Slayer Chestpiece</name>
+    <value>11000</value>
+    <attributes armor="8" strength="4" intuition="0" reflexes="4" vitality="3" vigor="5" />
+  </item>
+  <item id="140007">
+    <name language="en-US">Crusader Breastplate</name>
+    <value>10000</value>
+    <attributes armor="16" strength="5" intuition="2" reflexes="0" vitality="3" vigor="3" />
+  </item>
+  <item id="140008">
+    <name language="en-US">Fiend Hunter Tunic</name>
+    <value>25000</value>
+    <attributes armor="10" strength="7" intuition="4" reflexes="7" vitality="5" vigor="8" />
+  </item>
+  <item id="140009">
+    <name language="en-US">Assassin Tunic</name>
+    <value>17000</value>
+    <attributes armor="2" strength="5" intuition="5" reflexes="10" vitality="3" vigor="10" />
+  </item>
+  <item id="140010">
+    <name language="en-US">Dark Templar Cuirass</name>
+    <value>20000</value>
+    <attributes armor="23" strength="6" intuition="6" reflexes="0" vitality="6" vigor="3" />
+  </item>
+  <item id="140011">
+    <name language="en-US">Frost Knight Battleplate</name>
+    <value>14000</value>
+    <attributes armor="23" strength="8" intuition="0" reflexes="0" vitality="7" vigor="2" />
+  </item>
+</items>

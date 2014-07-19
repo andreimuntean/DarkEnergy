@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<items>
+  <item id="100000">
+    <name language="en-US">Iron Halberd</name>
+    <value>80</value>
+    <element>0</element>
+    <attributes damage="3" strength="1" intuition="0" reflexes="0" vitality="0" vigor="0" />
+  </item>
+  <item id="100001">
+    <name language="en-US">Sturdy Cudgel</name>
+    <value>10</value>
+    <element>0</element>
+    <attributes damage="2" strength="1" intuition="0" reflexes="0" vitality="1" vigor="0" />
+  </item>
+  <item id="100005">
+    <name language="en-US">Steel Sword</name>
+    <value>100</value>
+    <element>0</element>
+    <attributes damage="3" strength="0" intuition="0" reflexes="0" vitality="2" vigor="0" />
+  </item>
+  <item id="100010">
+    <name language="en-US">Frost Scythe</name>
+    <value>10000</value>
+    <element>3</element>
+    <attributes damage="40" strength="15" intuition="10" reflexes="7" vitality="8" vigor="10" />
+  </item>
+  <item id="100011">
+    <name language="en-US">Reaper of Souls</name>
+    <value>10000</value>
+    <element>5</element>
+    <attributes damage="40" strength="13" intuition="13" reflexes="7" vitality="7" vigor="10" />
+  </item>
+  <item id="100020">
+    <name language="en-US">Terror of Souls</name>
+    <value>12000</value>
+    <element>5</element>
+    <attributes damage="70" strength="45" intuition="10" reflexes="5" vitality="30" vigor="40" />
+  </item>
+  <item id="100023">
+    <name language="en-US">The Bereaver</name>
+    <value>12500</value>
+    <element>5</element>
+    <attributes damage="100" strength="50" intuition="15" reflexes="10" vitality="45" vigor="45" />
+  </item>
+</items>

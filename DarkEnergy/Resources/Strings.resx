@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbilityDisabled" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="AbilityRank" xml:space="preserve">
+    <value>RANK</value>
+  </data>
+  <data name="AbilityRankCurrent" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AbilityRankNext" xml:space="preserve">
+    <value>(Upgrade)</value>
+  </data>
+  <data name="AbilityResource" xml:space="preserve">
+    <value> DE</value>
+  </data>
+  <data name="AbilityResourceFull" xml:space="preserve">
+    <value>Dark Energy</value>
+  </data>
+  <data name="Attribute_Armor" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="Attribute_Vitality" xml:space="preserve">
+    <value>Vitality</value>
+  </data>
+  <data name="Attribute_Intuition" xml:space="preserve">
+    <value>Intuition</value>
+  </data>
+  <data name="Attribute_Reflexes" xml:space="preserve">
+    <value>Reflexes</value>
+  </data>
+  <data name="Attribute_Strength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="Attribute_Vigor" xml:space="preserve">
+    <value>Vigor</value>
+  </data>
+  <data name="Attribute_WeaponDamage" xml:space="preserve">
+    <value>Weapon Damage</value>
+  </data>
+  <data name="BattleEndLevelUp" xml:space="preserve">
+    <value>You have leveled up!</value>
+  </data>
+  <data name="BattleEndLost" xml:space="preserve">
+    <value>You have lost this battle.</value>
+  </data>
+  <data name="BattleEndRewards" xml:space="preserve">
+    <value>Rewards</value>
+  </data>
+  <data name="BattleEndWon" xml:space="preserve">
+    <value>You have won this battle.</value>
+  </data>
+  <data name="CannotUpgradeAbility" xml:space="preserve">
+    <value>You cannot upgrade this ability any further.</value>
+  </data>
+  <data name="CharacterCreation" xml:space="preserve">
+    <value>Character Creation</value>
+  </data>
+  <data name="CharacterDeletionConfirmation" xml:space="preserve">
+    <value>Are you sure you wish to delete</value>
+  </data>
+  <data name="CharacterList" xml:space="preserve">
+    <value>Character Selection</value>
+  </data>
+  <data name="CharacterMenu_Abilities" xml:space="preserve">
+    <value>Abilities</value>
+  </data>
+  <data name="CharacterMenu_Attributes" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="CharacterMenu_General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Character_Face" xml:space="preserve">
+    <value>Face</value>
+  </data>
+  <data name="Character_Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="Character_Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Character_Hair" xml:space="preserve">
+    <value>Hair</value>
+  </data>
+  <data name="Character_Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="Character_Race" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="Character_Skin" xml:space="preserve">
+    <value>Skin</value>
+  </data>
+  <data name="CodexMenu_Achievements" xml:space="preserve">
+    <value>Achievements</value>
+  </data>
+  <data name="CodexMenu_Quests" xml:space="preserve">
+    <value>Quests</value>
+  </data>
+  <data name="CombatExitConfirmationLine1" xml:space="preserve">
+    <value>Are you sure you wish to flee the battle?</value>
+  </data>
+  <data name="CombatExitConfirmationLine2" xml:space="preserve">
+    <value>It will count as a loss.</value>
+  </data>
+  <data name="CombatMessageAir" xml:space="preserve">
+    <value>AIR</value>
+  </data>
+  <data name="CombatMessageDarkness" xml:space="preserve">
+    <value>DARKNESS</value>
+  </data>
+  <data name="CombatMessageEarth" xml:space="preserve">
+    <value>EARTH</value>
+  </data>
+  <data name="CombatMessageEvaded" xml:space="preserve">
+    <value>EVADED</value>
+  </data>
+  <data name="CombatMessageFire" xml:space="preserve">
+    <value>FIRE</value>
+  </data>
+  <data name="CombatMessageHealed" xml:space="preserve">
+    <value>HEALED</value>
+  </data>
+  <data name="CombatMessageIce" xml:space="preserve">
+    <value>ICE</value>
+  </data>
+  <data name="CombatMessageLight" xml:space="preserve">
+    <value>LIGHT</value>
+  </data>
+  <data name="CombatMessageMissed" xml:space="preserve">
+    <value>MISSED</value>
+  </data>
+  <data name="CombatMessagePhysical" xml:space="preserve">
+    <value>PHYSICAL</value>
+  </data>
+  <data name="CombatMessageResisted" xml:space="preserve">
+    <value>RESISTED</value>
+  </data>
+  <data name="CombatMessageShock" xml:space="preserve">
+    <value>SHOCK</value>
+  </data>
+  <data name="CombatMessageWater" xml:space="preserve">
+    <value>WATER</value>
+  </data>
+  <data name="ConfirmChanges" xml:space="preserve">
+    <value>Confirm Changes</value>
+  </data>
+  <data name="CreateCharacter" xml:space="preserve">
+    <value>CREATE</value>
+  </data>
+  <data name="DeleteCharacter" xml:space="preserve">
+    <value>DELETE</value>
+  </data>
+  <data name="DescriptionDarkEnergy" xml:space="preserve">
+    <value>Dark Energy generation</value>
+  </data>
+  <data name="DescriptionEvasion" xml:space="preserve">
+    <value>Evasion</value>
+  </data>
+  <data name="DescriptionHealth" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="DescriptionMagicalDamage" xml:space="preserve">
+    <value>Magical power</value>
+  </data>
+  <data name="DescriptionPhysicalDamage" xml:space="preserve">
+    <value>Physical damage</value>
+  </data>
+  <data name="DescriptionProtection" xml:space="preserve">
+    <value>Defense</value>
+  </data>
+  <data name="EffectAbsorbDamagePercentage" xml:space="preserve">
+    <value>{T} absorbs {V} percent of damage received.</value>
+  </data>
+  <data name="EffectAbsorbDamageRaw" xml:space="preserve">
+    <value>{T} absorbs {V} damage.</value>
+  </data>
+  <data name="EffectAbsorbMagicPercentage" xml:space="preserve">
+    <value>{T} absorbs {V} percent of magical damage received.</value>
+  </data>
+  <data name="EffectAbsorbMagicRaw" xml:space="preserve">
+    <value>{T} absorbs {V} magical damage.</value>
+  </data>
+  <data name="EffectAbsorbPhysicalDamagePercentage" xml:space="preserve">
+    <value>{T} absorbs {V} physical damage received.</value>
+  </data>
+  <data name="EffectAbsorbPhysicalDamageRaw" xml:space="preserve">
+    <value>{T} absorbs {V} percent of physical damage received.</value>
+  </data>
+  <data name="EffectAirDamage" xml:space="preserve">
+    <value>Deals {V} air damage to the {T}.</value>
+  </data>
+  <data name="EffectDarknessDamage" xml:space="preserve">
+    <value>Deals {V} darkness damage to the {T}.</value>
+  </data>
+  <data name="EffectDrainLife" xml:space="preserve">
+    <value>Drains {V} life from the {T}.</value>
+  </data>
+  <data name="EffectEarthDamage" xml:space="preserve">
+    <value>Deals {V} earth damage to the {T}.</value>
+  </data>
+  <data name="EffectFireDamage" xml:space="preserve">
+    <value>Deals {V} fire damage to the {T}.</value>
+  </data>
+  <data name="EffectHeal" xml:space="preserve">
+    <value>Heals the {T} for {V}.</value>
+  </data>
+  <data name="EffectIceDamage" xml:space="preserve">
+    <value>Deals {V} ice damage to the {T}.</value>
+  </data>
+  <data name="EffectIncreaseDamagePercentage" xml:space="preserve">
+    <value>Increases all damage dealt by the {T} by {V}%.</value>
+  </data>
+  <data name="EffectIncreaseMagicPercentage" xml:space="preserve">
+    <value>Increases the {T}'s magical power by {V}%.</value>
+  </data>
+  <data name="EffectIncreasePhysicalDamagePercentage" xml:space="preserve">
+    <value>Increases all physical damage dealt by the {T} by {V}%.</value>
+  </data>
+  <data name="EffectLightDamage" xml:space="preserve">
+    <value>Deals {V} light damage to the {T}.</value>
+  </data>
+  <data name="EffectPhysicalDamage" xml:space="preserve">
+    <value>Deals {V} damage to the {T}.</value>
+  </data>
+  <data name="EffectRevive" xml:space="preserve">
+    <value>Resurrects the {T} and restores {V}% of its health.</value>
+  </data>
+  <data name="EffectShockDamage" xml:space="preserve">
+    <value>Deals {V} shock damage to the {T}.</value>
+  </data>
+  <data name="EffectTarget" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="EffectTargetedGroup" xml:space="preserve">
+    <value>Targeted group</value>
+  </data>
+  <data name="EffectUptime" xml:space="preserve">
+    <value> Active for {R} rounds.</value>
+  </data>
+  <data name="EffectWaterDamage" xml:space="preserve">
+    <value>Deals {V} water damage to the {T}.</value>
+  </data>
+  <data name="ElementDefensive" xml:space="preserve">
+    <value>Defensive</value>
+  </data>
+  <data name="ElementOffensive" xml:space="preserve">
+    <value>Offensive</value>
+  </data>
+  <data name="EmptyCharacterSlot" xml:space="preserve">
+    <value>&lt;Open Character Slot&gt;</value>
+  </data>
+  <data name="ExitMenu_Exit" xml:space="preserve">
+    <value>Save &amp; Exit</value>
+  </data>
+  <data name="ExitMenu_Save" xml:space="preserve">
+    <value>Save Game</value>
+  </data>
+  <data name="Experience" xml:space="preserve">
+    <value>Experience</value>
+  </data>
+  <data name="Intro_Message" xml:space="preserve">
+    <value>You wake up in an unknown forest.</value>
+  </data>
+  <data name="InventoryFilters_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="InventoryFilters_Armors" xml:space="preserve">
+    <value>Armors</value>
+  </data>
+  <data name="InventoryFilters_Misc" xml:space="preserve">
+    <value>Misc</value>
+  </data>
+  <data name="InventoryFilters_Weapons" xml:space="preserve">
+    <value>Weapons</value>
+  </data>
+  <data name="InventoryMenu_AttributeImprovements" xml:space="preserve">
+    <value>Attributes Gained</value>
+  </data>
+  <data name="InventoryMenu_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="InventoryMenu_Equipment" xml:space="preserve">
+    <value>Equipment</value>
+  </data>
+  <data name="InventoryMenu_Inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="InventoryMenu_MessageDeleteFailure" xml:space="preserve">
+    <value>You cannot delete an equipped item.</value>
+  </data>
+  <data name="InventoryMenu_MessageDeleteSuccess" xml:space="preserve">
+    <value>You have deleted {I}.</value>
+  </data>
+  <data name="InventoryMenu_MessageEquip" xml:space="preserve">
+    <value>You have equipped {I}.</value>
+  </data>
+  <data name="InventoryMenu_MessageUnequipFailure" xml:space="preserve">
+    <value>You cannot unequip this item.</value>
+  </data>
+  <data name="InventoryMenu_MessageUnequipSuccess" xml:space="preserve">
+    <value>Your {S} slot item has been unequipped.</value>
+  </data>
+  <data name="InventoryMenu_MessageUse" xml:space="preserve">
+    <value>You have used {I}.</value>
+  </data>
+  <data name="InventoryMenu_View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="ItemBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="ItemChest" xml:space="preserve">
+    <value>Chest</value>
+  </data>
+  <data name="ItemFeet" xml:space="preserve">
+    <value>Feet</value>
+  </data>
+  <data name="ItemFinger" xml:space="preserve">
+    <value>Finger</value>
+  </data>
+  <data name="ItemHands" xml:space="preserve">
+    <value>Hands</value>
+  </data>
+  <data name="ItemHead" xml:space="preserve">
+    <value>Head</value>
+  </data>
+  <data name="ItemLegs" xml:space="preserve">
+    <value>Legs</value>
+  </data>
+  <data name="ItemMisc" xml:space="preserve">
+    <value>Misc</value>
+  </data>
+  <data name="ItemNeck" xml:space="preserve">
+    <value>Neck</value>
+  </data>
+  <data name="ItemNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ItemRelic" xml:space="preserve">
+    <value>Relic</value>
+  </data>
+  <data name="ItemWeapon" xml:space="preserve">
+    <value>Weapon</value>
+  </data>
+  <data name="Item_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Item_Equip" xml:space="preserve">
+    <value>Equip</value>
+  </data>
+  <data name="Item_Equipped" xml:space="preserve">
+    <value>(Equipped)</value>
+  </data>
+  <data name="Item_Unequip" xml:space="preserve">
+    <value>Unequip</value>
+  </data>
+  <data name="Item_Use" xml:space="preserve">
+    <value>Use</value>
+  </data>
+  <data name="Item_Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="LoadingBattle" xml:space="preserve">
+    <value>Loading battle...</value>
+  </data>
+  <data name="LoadingWorld" xml:space="preserve">
+    <value>Loading world...</value>
+  </data>
+  <data name="MainMenu_Community" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="MainMenu_Feedback" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="MainMenu_PlayGame" xml:space="preserve">
+    <value>Play Game</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="NoAchievementsMessage" xml:space="preserve">
+    <value>You have not gained any achievements.</value>
+  </data>
+  <data name="NoQuestsMessage" xml:space="preserve">
+    <value>Your quest log is empty.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>PLAY</value>
+  </data>
+  <data name="RemainingAttributePoints" xml:space="preserve">
+    <value>You have $ unspent attribute points.</value>
+  </data>
+  <data name="RemainingMasteryPoints" xml:space="preserve">
+    <value>You have $ unspent mastery points.</value>
+  </data>
+  <data name="ResistanceAir" xml:space="preserve">
+    <value>AIR</value>
+  </data>
+  <data name="ResistanceDarkness" xml:space="preserve">
+    <value>DARKNESS</value>
+  </data>
+  <data name="ResistanceEarth" xml:space="preserve">
+    <value>EARTH</value>
+  </data>
+  <data name="ResistanceFire" xml:space="preserve">
+    <value>FIRE</value>
+  </data>
+  <data name="ResistanceIce" xml:space="preserve">
+    <value>ICE</value>
+  </data>
+  <data name="ResistanceLight" xml:space="preserve">
+    <value>LIGHT</value>
+  </data>
+  <data name="ResistanceNone" xml:space="preserve">
+    <value>NONE</value>
+  </data>
+  <data name="ResistanceShock" xml:space="preserve">
+    <value>SHOCK</value>
+  </data>
+  <data name="ResistanceWater" xml:space="preserve">
+    <value>WATER</value>
+  </data>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="Round" xml:space="preserve">
+    <value>Round</value>
+  </data>
+  <data name="TapToContinue" xml:space="preserve">
+    <value>Tap anywhere to continue.</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Dark Energy</value>
+  </data>
+  <data name="UpgradeAbility" xml:space="preserve">
+    <value>Upgrade Ability</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Alpha</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>YES</value>
+  </data>
+  <data name="CharacterNameAlert" xml:space="preserve">
+    <value>You must name your character.</value>
+  </data>
+</root>

@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<items>
+  <item id="160000">
+    <name language="en-US">Leather Gloves</name>
+    <value>15</value>
+    <attributes armor="2" strength="0" intuition="0" reflexes="0" vitality="0" vigor="1" />
+  </item>
+  <item id="160001">
+    <name language="en-US">Dark Leather Gloves</name>
+    <value>20</value>
+    <attributes armor="2" strength="0" intuition="0" reflexes="1" vitality="0" vigor="1" />
+  </item>
+</items>

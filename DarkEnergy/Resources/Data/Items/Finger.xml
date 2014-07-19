@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="yes"?>
+<items>
+  <item id="170000">
+    <name language="en-US">Minor Ring of Might</name>
+    <value>450</value>
+    <attributes strength="5" intuition="0" reflexes="0" vitality="0" vigor="0" />
+  </item>
+</items>

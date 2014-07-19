@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB5D97DC-BFB3-484B-9656-D9F3840619A4}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DarkEnergy</RootNamespace>
+    <AssemblyName>DarkEnergy</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>DarkEnergy.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>DarkEnergy.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Game\FPSCounter.cs" />
+    <Compile Include="Main\Game\DarkEnergyGame.cs" />
+    <Compile Include="Main\Game\Region.cs" />
+    <Compile Include="Objects\Abilities\Visual\Frenzy.cs" />
+    <Compile Include="Objects\Abilities\Visual\VenomSpit.cs" />
+    <Compile Include="Objects\Characters\Hero\Hero.cs" />
+    <Compile Include="Managers\RandomManager.cs" />
+    <Compile Include="Main\Interface Objects\Keyboard.cs" />
+    <Compile Include="Main\Interface Objects\MessageBox.cs" />
+    <Compile Include="Main\Game\Quantity.cs" />
+    <Compile Include="Main\Graphics\Renderer.cs" />
+    <Compile Include="Objects\Abilities\Visual\Infest.cs" />
+    <Compile Include="Objects\Abilities\Visual\NoVisual.cs" />
+    <Compile Include="Objects\Abilities\TargetRestrictions.cs" />
+    <Compile Include="Objects\Combat\Classes\ImpactAnimations.cs" />
+    <Compile Include="Objects\Combat\Classes\RewardManager.cs" />
+    <Compile Include="Objects\Combat\EnemyList.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Relic.cs" />
+    <Compile Include="Objects\Party\PartySystem.cs" />
+    <Compile Include="Scenes\BattleEndScreen\BattleEndScreen.cs" />
+    <Compile Include="Objects\Combat\Classes\Interface\CombatText.cs" />
+    <Compile Include="Objects\Combat\Classes\TurnData.cs" />
+    <Compile Include="Objects\Combat\CombatSystem.cs" />
+    <Compile Include="Managers\CombatSceneManager.cs" />
+    <Compile Include="Managers\DataManager.cs" />
+    <Compile Include="Managers\DataStorageManager.cs" />
+    <Compile Include="Managers\PhoneEffectsManager.cs" />
+    <Compile Include="Managers\ExceptionManager.cs" />
+    <Compile Include="Managers\GameManager.cs" />
+    <Compile Include="Managers\LoadingScreenManager.cs" />
+    <Compile Include="Notifications\Saving\SavingIcon.cs" />
+    <Compile Include="Objects\Abilities\Ability.cs" />
+    <Compile Include="Objects\Abilities\ActiveEffect.cs" />
+    <Compile Include="Objects\Abilities\Visual\AbilityVisual.cs" />
+    <Compile Include="Objects\Abilities\Visual\FireBolt.cs" />
+    <Compile Include="Objects\Characters\Hero\AbilitySet.cs" />
+    <Compile Include="Objects\Abilities\Effect.cs" />
+    <Compile Include="Objects\Characters\Enemy.cs" />
+    <Compile Include="Objects\Characters\Components\Resistances.cs" />
+    <Compile Include="Objects\Core\Interfaces\INotification.cs" />
+    <Compile Include="Objects\Core\Interfaces\ITappable.cs" />
+    <Compile Include="Objects\ValueBars\ExperienceBar.cs" />
+    <Compile Include="Objects\Combat\Classes\Interface\AbilityFrames\AbilityButton.cs" />
+    <Compile Include="Objects\Combat\Classes\Interface\AbilityFrames\AbilitySetView.cs" />
+    <Compile Include="Objects\Combat\Classes\AreaEffects.cs" />
+    <Compile Include="Objects\Combat\Classes\Battle.cs" />
+    <Compile Include="Objects\Combat\Classes\AnimationManager.cs" />
+    <Compile Include="Objects\Combat\Classes\AbilityManager.cs" />
+    <Compile Include="Objects\Combat\Classes\CombatAction.cs" />
+    <Compile Include="Objects\Combat\Classes\Interface\TacticalMenu.cs" />
+    <Compile Include="Objects\Combat\Classes\Interface\UnitFrames\UnitFrame.cs" />
+    <Compile Include="Objects\Combat\Classes\Interface\AbilityFrames\AbilityFrames.cs" />
+    <Compile Include="Objects\Combat\Classes\Interface\UnitFrames\UnitFrames.cs" />
+    <Compile Include="Objects\Combat\Classes\Units.cs" />
+    <Compile Include="Scenes\BattleEndScreen\BattleEndScreenObjects.cs" />
+    <Compile Include="Scenes\World\Menu\AbilitiesPage\AbilityPanel.cs" />
+    <Compile Include="Scenes\World\Menu\AbilitiesPage\AbilityPage.cs" />
+    <Compile Include="Scenes\World\Menu\AbilitiesPage\AbilityWidePanel.cs" />
+    <Compile Include="Scenes\World\Menu\AchievementsPage\AchievementsPage.cs" />
+    <Compile Include="Scenes\World\Menu\AttributesPage\EffectsPanel.cs" />
+    <Compile Include="Scenes\World\Menu\AttributesPage\AttributesPanel.cs" />
+    <Compile Include="Scenes\World\Menu\EquipmentPage\AttributesPanel.cs" />
+    <Compile Include="Scenes\World\Menu\EquipmentPage\EquipmentPanel.cs" />
+    <Compile Include="Scenes\World\Menu\EquipmentPage\EquipmentPage.cs" />
+    <Compile Include="Scenes\World\Menu\ExitMenu.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Back.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Chest.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Feet.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Finger.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Hands.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Head.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Legs.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Neck.cs" />
+    <Compile Include="Objects\Inventory\Classes\Slots\Weapon.cs" />
+    <Compile Include="Objects\Inventory\InventorySystem.cs" />
+    <Compile Include="Objects\Quests\QuestSystem.cs" />
+    <Compile Include="Managers\SettingsManager.cs" />
+    <Compile Include="Objects\Characters\Hero\Features.cs" />
+    <Compile Include="Objects\Core\Classes\CalligraphedImage.cs" />
+    <Compile Include="Objects\Core\Classes\Text.cs" />
+    <Compile Include="Objects\Core\Interfaces\ILoadable.cs" />
+    <Compile Include="Objects\Core\Interfaces\ISaveable.cs" />
+    <Compile Include="Objects\Core\Interfaces\IScene.cs" />
+    <Compile Include="Objects\Characters\Character.cs" />
+    <Compile Include="Objects\Characters\Components\Attributes.cs" />
+    <Compile Include="Objects\Inventory\Classes\Equipment.cs" />
+    <Compile Include="Objects\Characters\Hero\HeroSystem.cs" />
+    <Compile Include="Notifications\Saving\SaveGameNotification.cs" />
+    <Compile Include="Objects\Inventory\Classes\EquippableItem.cs" />
+    <Compile Include="Objects\Inventory\Classes\GenericItem.cs" />
+    <Compile Include="Objects\Inventory\Interfaces\IItem.cs" />
+    <Compile Include="Objects\Quests\Classes\Quest.cs" />
+    <Compile Include="Resources\Dialogue.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dialogue.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scenes\AcolyteDialogue\AcolyteDialogue.cs" />
+    <Compile Include="Scenes\AcolyteDialogue\CinematicDialogue.cs" />
+    <Compile Include="Scenes\Character_Creation_Menu\CharacterCreationMenu.cs" />
+    <Compile Include="Scenes\Character_Creation_Menu\CharacterCreationMenuObjects.cs" />
+    <Compile Include="Scenes\Character_Selection_Menu\CharacterSelectionMenu.cs" />
+    <Compile Include="Scenes\Character_Selection_Menu\CharacterSelectionMenuObjects.cs" />
+    <Compile Include="Managers\NotificationManager.cs" />
+    <Compile Include="Scenes\Intro\Intro.cs" />
+    <Compile Include="Scenes\World\Menu\CharacterMenu.cs" />
+    <Compile Include="Scenes\World\Menu\AttributesPage\AttributesPage.cs" />
+    <Compile Include="Scenes\World\Menu\AbilitiesPage\AbilitiesPage.cs" />
+    <Compile Include="Scenes\World\Menu\InventoryPage\ItemSlot.cs" />
+    <Compile Include="Scenes\World\Menu\InventoryPage\ItemController.cs" />
+    <Compile Include="Scenes\World\Menu\InventoryPage\ItemViewer.cs" />
+    <Compile Include="Scenes\World\Menu\InventoryPage\ItemListPanel.cs" />
+    <Compile Include="Scenes\World\Menu\InventoryPage\InventoryPage.cs" />
+    <Compile Include="Scenes\World\Menu\GeneralPage\GeneralPage.cs" />
+    <Compile Include="Scenes\World\Menu\CodexMenu.cs" />
+    <Compile Include="Scenes\World\Menu\InventoryMenu.cs" />
+    <Compile Include="Scenes\World\Menu\GeneralPage\ResistancesPanel.cs" />
+    <Compile Include="Scenes\World\Menu\GeneralPage\AttributesPanel.cs" />
+    <Compile Include="Objects\ValueBars\ValueBar.cs" />
+    <Compile Include="Scenes\World\Menu\QuestsPage\QuestsPage.cs" />
+    <Compile Include="Scenes\World\Objects\MapMarker.cs" />
+    <Compile Include="Scenes\World\Scenes\Westhill\Lake.cs" />
+    <Compile Include="Scenes\World\Scenes\Westhill\GeneralStore.cs" />
+    <Compile Include="Scenes\World\Scenes\Westhill\Village.cs" />
+    <Compile Include="Scenes\World\Menu\WorldScene.cs" />
+    <Compile Include="Screen.xaml.cs">
+      <DependentUpon>Screen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\TouchManager.cs" />
+    <Compile Include="Objects\Core\Classes\GameObject.cs" />
+    <Compile Include="Objects\Core\Classes\GameSystem.cs" />
+    <Compile Include="Objects\Core\Classes\TexturedElement.cs" />
+    <Compile Include="Objects\Core\Interfaces\IGame.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\Debug_Menu\DebugMenu.cs" />
+    <Compile Include="Notifications\Debug_Menu\DebugMenuObjects.cs" />
+    <Compile Include="Scenes\Main_Menu\MainMenu.cs" />
+    <Compile Include="Scenes\Main_Menu\MainMenuObjects.cs" />
+    <Compile Include="Managers\SceneManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Screen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Ability\Effects\Firebolt.dds" />
+    <Content Include="Assets\Ability\Effects\Frenzy.dds" />
+    <Content Include="Assets\Ability\Effects\Infest.dds" />
+    <Content Include="Assets\Ability\Effects\VenomSpit.dds" />
+    <Content Include="Assets\Ability\Icons\10000.dds" />
+    <Content Include="Assets\Ability\Icons\10001.dds" />
+    <Content Include="Assets\Ability\Icons\10002.dds" />
+    <Content Include="Assets\Ability\Icons\10003.dds" />
+    <Content Include="Assets\Ability\Icons\10004.dds" />
+    <Content Include="Assets\Ability\Icons\10005.dds" />
+    <Content Include="Assets\Ability\Icons\10006.dds" />
+    <Content Include="Assets\Ability\Icons\10007.dds" />
+    <Content Include="Assets\Ability\Icons\10008.dds" />
+    <Content Include="Assets\Ability\Icons\10009.dds" />
+    <Content Include="Assets\Ability\Icons\10010.dds" />
+    <Content Include="Assets\Ability\Icons\10011.dds" />
+    <Content Include="Assets\Ability\Icons\CostBackground.dds" />
+    <Content Include="Assets\Ability\Icons\Locked.dds" />
+    <Content Include="Assets\Ability\Icons\Template0.dds" />
+    <Content Include="Assets\Ability\Icons\Template1.dds" />
+    <Content Include="Assets\Ability\Icons\Template2.dds" />
+    <Content Include="Assets\Ability\Icons\Template3.dds" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Characters\Character.dds" />
+    <Content Include="Assets\Characters\Enemies\10000.dds" />
+    <Content Include="Assets\Characters\Enemies\10001.dds" />
+    <Content Include="Assets\Characters\Enemies\10002.dds" />
+    <Content Include="Assets\Characters\Enemies\10003.dds" />
+    <Content Include="Assets\Characters\Enemies\10004.dds" />
+    <Content Include="Assets\Characters\Enemies\10005.dds" />
+    <Content Include="Assets\Characters\Enemies\10006.dds" />
+    <Content Include="Assets\Characters\Hero\Female\Face1.dds" />
+    <Content Include="Assets\Characters\Hero\Female\Face2.dds" />
+    <Content Include="Assets\Characters\Hero\Female\Face3.dds" />
+    <Content Include="Assets\Characters\Hero\Female\Face4.dds" />
+    <Content Include="Assets\Characters\Hero\Female\Hair1.dds" />
+    <Content Include="Assets\Characters\Hero\Female\Hair2.dds" />
+    <Content Include="Assets\Characters\Hero\Female\Hair3.dds" />
+    <Content Include="Assets\Characters\Hero\Female\Hair4.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face1.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face10.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face11.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face2.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face3.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face4.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face5.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face6.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face7.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face8.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Face9.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Hair1.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Hair2.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Hair3.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Hair4.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Hair5.dds" />
+    <Content Include="Assets\Characters\Hero\Male\Hair6.dds" />
+    <Content Include="Assets\Characters\Hero\Skin1.dds" />
+    <Content Include="Assets\Characters\Hero\Skin10.dds" />
+    <Content Include="Assets\Characters\Hero\Skin10_HandOverWeapon.dds" />
+    <Content Include="Assets\Characters\Hero\Skin1_HandOverWeapon.dds" />
+    <Content Include="Assets\Characters\Hero\Skin2.dds" />
+    <Content Include="Assets\Characters\Hero\Skin2_HandOverWeapon.dds" />
+    <Content Include="Assets\Characters\Hero\Skin3.dds" />
+    <Content Include="Assets\Characters\Hero\Skin3_HandOverWeapon.dds" />
+    <Content Include="Assets\Characters\Hero\Skin4.dds" />
+    <Content Include="Assets\Characters\Hero\Skin4_HandOverWeapon.dds" />
+    <Content Include="Assets\Characters\Hero\Skin5.dds" />
+    <Content Include="Assets\Characters\Hero\Skin5_HandOverWeapon.dds" />
+    <ToolkitFont Include="Assets\Fonts\CenturyGothic16.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\Calibri16.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\SegoeWP24.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\SegoeWP16.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\SegoeWP08.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\CenturyGothic24.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\CenturyGothic32.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\CenturyGothic40.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\Calibri24.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\Calibri32.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\CenturyGothic28.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\Calibri30.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\Calibri28.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\SegoeWP64.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\SegoeWP28.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\SegoeWP40.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\SegoeWP44.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\Calibri20.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\CenturyGothic20.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <Content Include="Assets\Characters\Hero\Skin6.dds" />
+    <Content Include="Assets\Characters\Hero\Skin6_HandOverWeapon.dds" />
+    <Content Include="Assets\Characters\Hero\Skin7.dds" />
+    <Content Include="Assets\Characters\Hero\Skin7_HandOverWeapon.dds" />
+    <Content Include="Assets\Characters\Hero\Skin8.dds" />
+    <Content Include="Assets\Characters\Hero\Skin8_HandOverWeapon.dds" />
+    <Content Include="Assets\Characters\Hero\Skin9.dds" />
+    <Content Include="Assets\Characters\Hero\Skin9_HandOverWeapon.dds" />
+    <ToolkitFont Include="Assets\Fonts\Calibri18.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <Content Include="Assets\IconMedium.png" />
+    <Content Include="Assets\IconSmall.png" />
+    <Content Include="Assets\Interface\AddSubtractButtons.dds" />
+    <Content Include="Assets\Interface\ArrowButtons.dds" />
+    <Content Include="Assets\Interface\ArrowButtonsDark.dds" />
+    <Content Include="Assets\Interface\BackgroundPanel.dds" />
+    <Content Include="Assets\Interface\BackgroundPurple.dds" />
+    <Content Include="Assets\Interface\BackgroundShadow.dds" />
+    <Content Include="Assets\Interface\BackgroundWidePurple.dds" />
+    <Content Include="Assets\Interface\ButtonFemale.dds" />
+    <Content Include="Assets\Interface\ButtonLeft.dds" />
+    <Content Include="Assets\Interface\ButtonMale.dds" />
+    <Content Include="Assets\Interface\ButtonRight.dds" />
+    <Content Include="Assets\Interface\CharacterSlot.dds" />
+    <Content Include="Assets\Interface\Character\CurrencyIcon.dds" />
+    <Content Include="Assets\Interface\Character\DarkCrystalsIcon.dds" />
+    <Content Include="Assets\Interface\Character\Elements.dds" />
+    <Content Include="Assets\Interface\Character\ExperienceIcon.dds" />
+    <Content Include="Assets\Interface\DefaultButton.dds" />
+    <Content Include="Assets\Interface\DialoguePanel.dds" />
+    <Content Include="Assets\Interface\ExitMenu.dds" />
+    <Content Include="Assets\Interface\HeaderBackground.dds" />
+    <Content Include="Assets\Interface\KeyboardBackground.dds" />
+    <Content Include="Assets\Interface\KeyboardBackspace.dds" />
+    <Content Include="Assets\Interface\KeyboardButton.dds" />
+    <Content Include="Assets\Interface\KeyboardEnter.dds" />
+    <Content Include="Assets\Interface\LoadingIcon.dds" />
+    <Content Include="Assets\Interface\DefaultBackground.dds" />
+    <Content Include="Assets\Interface\MessageBox.dds" />
+    <Content Include="Assets\Interface\MessageBoxButton.dds" />
+    <Content Include="Assets\Interface\TextBackground.dds" />
+    <Content Include="Assets\Interface\TitlelessScreen.dds" />
+    <Content Include="Assets\Interface\ValueBar\LargeBackground.dds" />
+    <Content Include="Assets\Interface\ValueBar\LargeForeground.dds" />
+    <Content Include="Assets\Interface\ValueBar\LargePurpleBar.dds" />
+    <Content Include="Assets\Interface\ValueBar\SmallBackground.dds" />
+    <Content Include="Assets\Interface\ValueBar\SmallForeground.dds" />
+    <Content Include="Assets\Interface\ValueBar\SmallGreenBar.dds" />
+    <Content Include="Assets\Interface\ValueBar\SmallPurpleBar.dds" />
+    <Content Include="Assets\Interface\ValueBar\TextShadow.dds" />
+    <Content Include="Assets\Interface\World\Background.dds" />
+    <Content Include="Assets\Interface\World\CharacterIcon.dds" />
+    <Content Include="Assets\Interface\World\CodexIcon.dds" />
+    <Content Include="Assets\Interface\World\Combat\AuraSelf.dds" />
+    <Content Include="Assets\Interface\World\Combat\AuraTarget.dds" />
+    <Content Include="Assets\Interface\World\Combat\AuraTargetRed.dds" />
+    <Content Include="Assets\Interface\World\Combat\CombatTextBackground.dds" />
+    <Content Include="Assets\Interface\World\Combat\EndScreen\TextBackground1.dds" />
+    <Content Include="Assets\Interface\World\Combat\EndScreen\TextBackground2.dds" />
+    <Content Include="Assets\Interface\World\Combat\LevelIcon.dds" />
+    <Content Include="Assets\Interface\World\Combat\UnitFrames.dds" />
+    <Content Include="Assets\Interface\World\Combat\UnitFramesBackground.dds" />
+    <Content Include="Assets\Interface\World\InventoryIcon.dds" />
+    <Content Include="Assets\Interface\World\Marker\Combat.dds" />
+    <Content Include="Assets\Interface\World\Marker\Vendor.dds" />
+    <Content Include="Assets\Interface\World\Marker\Quest.dds" />
+    <Content Include="Assets\Interface\World\Marker\Tavern.dds" />
+    <Content Include="Assets\Interface\World\Marker\Travel.dds" />
+    <Content Include="Assets\Interface\World\Menu\AbilitiesBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\AbilityBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\AchievementsBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\AttributesBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\EquipmentBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\InventoryBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\ItemViewerBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\ItemViewerButton.dds" />
+    <Content Include="Assets\Interface\World\Menu\InventoryItem.dds" />
+    <Content Include="Assets\Interface\World\Menu\InventoryItemInspect.dds" />
+    <Content Include="Assets\Interface\World\Menu\InventoryItemPanelBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\InventoryFilterButton.dds" />
+    <Content Include="Assets\Interface\World\Menu\ItemControllerBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\ItemControllerButton.dds" />
+    <Content Include="Assets\Interface\World\Menu\Panel.dds" />
+    <Content Include="Assets\Interface\World\Menu\QuestsBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\WideButton.dds" />
+    <Content Include="Assets\Interface\World\Menu\WidePanel.dds" />
+    <Content Include="Assets\Items\Back\150001.dds" />
+    <Content Include="Assets\Items\Chest\140000.dds" />
+    <Content Include="Assets\Items\Chest\140001.dds" />
+    <Content Include="Assets\Items\Chest\140002.dds" />
+    <Content Include="Assets\Items\Chest\140003.dds" />
+    <Content Include="Assets\Items\Chest\140004.dds" />
+    <Content Include="Assets\Items\Chest\140005.dds" />
+    <Content Include="Assets\Items\Chest\140006.dds" />
+    <Content Include="Assets\Items\Chest\140007.dds" />
+    <Content Include="Assets\Items\Chest\140008.dds" />
+    <Content Include="Assets\Items\Chest\140009.dds" />
+    <Content Include="Assets\Items\Chest\140010.dds" />
+    <Content Include="Assets\Items\Chest\140011.dds" />
+    <Content Include="Assets\Items\Feet\190000.dds" />
+    <Content Include="Assets\Items\Feet\190001.dds" />
+    <Content Include="Assets\Items\Feet\190002.dds" />
+    <Content Include="Assets\Items\Feet\190003.dds" />
+    <Content Include="Assets\Items\Feet\190004.dds" />
+    <Content Include="Assets\Items\Feet\190005.dds" />
+    <Content Include="Assets\Items\Feet\190006.dds" />
+    <Content Include="Assets\Items\Feet\190007.dds" />
+    <Content Include="Assets\Items\Feet\190008.dds" />
+    <Content Include="Assets\Items\Feet\190009.dds" />
+    <Content Include="Assets\Items\Feet\190010.dds" />
+    <Content Include="Assets\Items\Feet\190011.dds" />
+    <Content Include="Assets\Items\Hands\160001.dds" />
+    <Content Include="Assets\Items\Hands\160001_H.dds" />
+    <Content Include="Assets\Items\Head\120000.dds" />
+    <Content Include="Assets\Items\Head\120001.dds" />
+    <Content Include="Assets\Items\Legs\180000.dds" />
+    <Content Include="Assets\Items\Legs\180001.dds" />
+    <Content Include="Assets\Items\Legs\180002.dds" />
+    <Content Include="Assets\Items\Legs\180003.dds" />
+    <Content Include="Assets\Items\Legs\180004.dds" />
+    <Content Include="Assets\Items\Legs\180005.dds" />
+    <Content Include="Assets\Items\Legs\180006.dds" />
+    <Content Include="Assets\Items\Legs\180007.dds" />
+    <Content Include="Assets\Items\Legs\180008.dds" />
+    <Content Include="Assets\Items\Legs\180009.dds" />
+    <Content Include="Assets\Items\Legs\180010.dds" />
+    <Content Include="Assets\Items\Legs\180011.dds" />
+    <Content Include="Assets\Items\Weapon\100000.dds" />
+    <Content Include="Assets\Items\Weapon\100005.dds" />
+    <Content Include="Assets\Items\Weapon\100010.dds" />
+    <Content Include="Assets\Items\Weapon\100011.dds" />
+    <Content Include="Assets\Items\Weapon\100020.dds" />
+    <Content Include="Assets\Items\Weapon\100023.dds" />
+    <Content Include="Assets\World\DialogueAcolyteBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\GeneralBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\Button.dds" />
+    <Content Include="Assets\World\Scenes\Combat\1.dds" />
+    <Content Include="Assets\World\Scenes\Combat\2.dds" />
+    <Content Include="Assets\World\Scenes\Combat\3.dds" />
+    <Content Include="Assets\World\Scenes\Combat\4.dds" />
+    <Content Include="Assets\World\Scenes\Combat\5.dds" />
+    <Content Include="Assets\World\Scenes\Combat\6.dds" />
+    <Content Include="Assets\World\Scenes\Combat\7.dds" />
+    <Content Include="Assets\World\Scenes\Combat\8.dds" />
+    <Content Include="Assets\World\Scenes\Westhill\GeneralStore.dds" />
+    <Content Include="Assets\World\Scenes\Westhill\Lake.dds" />
+    <Content Include="Assets\World\Scenes\Westhill\Map.dds" />
+    <Content Include="Resources\Data\Abilities\Ability.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Data\Characters\Enemy.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Data\Items\Head.xml" />
+    <Content Include="Resources\Data\Items\Back.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Data\Items\Relic.xml" />
+    <Content Include="Resources\Data\Items\Neck.xml" />
+    <Content Include="Resources\Data\Items\Finger.xml" />
+    <Content Include="Resources\Data\Items\Hands.xml" />
+    <Content Include="Resources\Data\Items\Chest.xml" />
+    <Content Include="Resources\Data\Items\Legs.xml" />
+    <Content Include="Resources\Data\Items\Feet.xml" />
+    <Content Include="Resources\Data\Items\Weapon.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <ToolkitFont Include="Assets\Fonts\SegoeWP32.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <ToolkitFont Include="Assets\Fonts\Consolas18.xml">
+      <SubType>Designer</SubType>
+    </ToolkitFont>
+    <Content Include="Assets\Interface\HighlightPurple.dds" />
+    <Content Include="Assets\Interface\Title.dds" />
+    <Content Include="Assets\Interface\TitleScreen.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Dialogue.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dialogue.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Settings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Objects\Vendors\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <Import Project="$(SharpDXSDKDir)\SharpDX.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

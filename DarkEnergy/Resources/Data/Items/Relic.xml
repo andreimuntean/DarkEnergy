@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<items>
+  <item id="110000">
+    <name language="en-US">Black Herald</name>
+    <value>5000</value>
+    <element>5</element>
+    <attributes strength="5" intuition="0" reflexes="0" vitality="0" vigor="0" />
+  </item>
+  <item id="110001">
+    <name language="en-US">Orb of Fire</name>
+    <value>5000</value>
+    <element>7</element>
+    <attributes strength="0" intuition="5" reflexes="0" vitality="0" vigor="0" />
+  </item>
+  <item id="110002">
+    <name language="en-US">Orb of Frost</name>
+    <value>5000</value>
+    <element>3</element>
+    <attributes strength="0" intuition="5" reflexes="0" vitality="0" vigor="0" />
+  </item>
+  <item id="110003">
+    <name language="en-US">Sigil of Light</name>
+    <value>5000</value>
+    <element>1</element>
+    <attributes strength="0" intuition="5" reflexes="0" vitality="0" vigor="0" />
+  </item>
+  <item id="110004">
+    <name language="en-US">Totem of Earth</name>
+    <value>5000</value>
+    <element>6</element>
+    <attributes strength="0" intuition="5" reflexes="0" vitality="0" vigor="0" />
+  </item>
+  <item id="110005">
+    <name language="en-US">Orb of Lightning</name>
+    <value>5000</value>
+    <element>8</element>
+    <attributes strength="0" intuition="5" reflexes="0" vitality="0" vigor="0" />
+  </item>
+</items>

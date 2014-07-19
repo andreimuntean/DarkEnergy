@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<items>
+  <item id="150000">
+    <name language="en-US">Rugged Cloak</name>
+    <value>50</value>
+    <attributes armor="5" strength="0" intuition="0" reflexes="0" vitality="2" vigor="0" />
+  </item>
+  <item id="150001">
+    <name language="en-US">Dark Cloth Cloak</name>
+    <value>75</value>
+    <attributes armor="5" strength="0" intuition="0" reflexes="3" vitality="0" vigor="0" />
+  </item>
+</items>

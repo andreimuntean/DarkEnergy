@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<enemies>
+  <enemy id="10000">
+    <name language="en-US">Giant Wasp</name>
+    <element defensive="6" offensive="6" />
+    <attributes damage="3" strength="1" intuition="0" reflexes="3" vitality="8" vigor="2" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200000</ability> <!-- Rip -->
+    </abilitySet>
+    <currency>50</currency>
+    <experience>40</experience>
+    <texture id="10000" width="250" height="360" />
+  </enemy>
+  <enemy id="10001">
+    <name language="en-US">Rabid Rat</name>
+    <element defensive="5" offensive="5" />
+    <attributes damage="2" strength="1" intuition="0" reflexes="3" vitality="6" vigor="3" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200000</ability> <!-- Rip -->
+    </abilitySet>
+    <currency>35</currency>
+    <experience>30</experience>
+    <texture id="10001" width="453" height="115" />
+  </enemy>
+  <enemy id="10002">
+    <name language="en-US">Shadow Spawn</name>
+    <element defensive="5" offensive="5" />
+    <attributes damage="2" strength="1" intuition="2" reflexes="1" vitality="4" vigor="3" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200000</ability> <!-- Rip -->
+      <ability>100040</ability> <!-- Infest -->
+      <ability>100050</ability> <!-- Drain Life -->
+    </abilitySet>
+    <currency>20</currency>
+    <experience>40</experience>
+    <texture id="10002" width="241" height="222" />
+  </enemy>
+  <enemy id="10003">
+    <name language="en-US">Bog Beast</name>
+    <element defensive="6" offensive="6" />
+    <attributes damage="8" strength="3" intuition="0" reflexes="1" vitality="12" vigor="2" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200000</ability> <!-- Rip -->
+      <ability>200020</ability> <!-- Frenzy -->
+    </abilitySet>
+    <currency>100</currency>
+    <experience>110</experience>
+    <texture id="10003" width="352" height="391" />
+  </enemy>
+  <enemy id="10004">
+    <name language="en-US">Centaur</name>
+    <element defensive="7" offensive="7" />
+    <attributes damage="3" strength="2" intuition="0" reflexes="1" vitality="10" vigor="3" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200040</ability> <!-- Assault -->
+      <ability>200020</ability> <!-- Frenzy -->
+      <ability>200005</ability> <!-- Heal -->
+    </abilitySet>
+    <currency>80</currency>
+    <experience>50</experience>
+    <texture id="10004" width="183" height="304" />
+  </enemy>
+  <enemy id="10005">
+    <name language="en-US">Giant Spider</name>
+    <element defensive="5" offensive="5" />
+    <attributes damage="8" strength="1" intuition="3" reflexes="5" vitality="5" vigor="3" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200000</ability> <!-- Rip -->
+      <ability>200010</ability> <!-- Bite -->
+      <ability>200030</ability> <!-- Venom Spit -->
+    </abilitySet>
+    <currency>90</currency>
+    <experience>60</experience>
+    <texture id="10005" width="360" height="142" />
+  </enemy>
+  <enemy id="10006">
+    <name language="en-US">Skeleton Warrior</name>
+    <element defensive="5" offensive="5" />
+    <attributes damage="5" strength="1" intuition="0" reflexes="2" vitality="6" vigor="2" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200040</ability> <!-- Assault -->
+    </abilitySet>
+    <currency>55</currency>
+    <experience>40</experience>
+    <texture id="10006" width="277" height="275" />
+  </enemy>
+</enemies>
