@@ -6,14 +6,14 @@ using DarkEnergy.Combat;
 
 namespace DarkEnergy.Abilities.Visual
 {
-    public class Infest : AbilityVisual
+    public sealed class Infest : AbilityVisual
     {
-        protected float direction;
+        private float direction;
         private const float moveTime = 0.1f;
-        protected TexturedElement effect;
-        protected Vector2 initialDistance;
-        protected Vector2 start;
-        protected Vector2 end;
+        private TexturedElement effect;
+        private Vector2 initialDistance;
+        private Vector2 start;
+        private Vector2 end;
 
         public Infest(CombatAction action) : base(action)
         {

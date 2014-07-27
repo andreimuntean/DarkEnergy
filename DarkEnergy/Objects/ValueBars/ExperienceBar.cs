@@ -5,9 +5,9 @@ using DarkEnergy.Characters.Hero;
 
 namespace DarkEnergy.Interface
 {
-    public class ExperienceBar : ValueBar
+    public sealed class ExperienceBar : ValueBar
     {
-        protected CalligraphedImage left, center, right;
+        private CalligraphedImage left, center, right;
 
         public ExperienceBar() : base(BarSize.Large, BarColor.Purple, GameManager.Hero.Experience)
         {

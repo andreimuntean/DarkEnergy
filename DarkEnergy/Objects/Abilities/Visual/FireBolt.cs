@@ -6,14 +6,14 @@ using DarkEnergy.Combat;
 
 namespace DarkEnergy.Abilities.Visual
 {
-    public class Firebolt : AbilityVisual
+    public sealed class Firebolt : AbilityVisual
     {
-        protected float direction;
+        private float direction;
         private const double moveTime = 0.4;
-        protected TexturedElement firebolt;
-        protected Vector2 initialDistance;
-        protected Vector2 start;
-        protected Vector2 end;
+        private TexturedElement firebolt;
+        private Vector2 initialDistance;
+        private Vector2 start;
+        private Vector2 end;
 
         public Firebolt(CombatAction action) : base(action)
         {

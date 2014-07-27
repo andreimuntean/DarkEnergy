@@ -36,8 +36,8 @@ namespace DarkEnergy.Scenes.World.Westhill
 
             TouchManager.OnTap(portal, () =>
             {
-                var location = RandomManager.GetInt(1, 8);
-                var enemies = new EnemyList(10000, 10001, 10002, 10003, 10004, 10005, 10006);
+                var location = RandomManager.GetInt(10001, 10007);
+                var enemies = new EnemyList(10000, 10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011);
                 enemies.SetLevelList(GameManager.Hero.Level / 5 + 1, (int)(GameManager.Hero.Level * 1.2f + 4));
                 CombatSceneManager.Engage(this, location, enemies.GetList());
             });

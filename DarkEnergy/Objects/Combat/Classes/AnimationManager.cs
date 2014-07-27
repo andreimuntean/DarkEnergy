@@ -15,11 +15,11 @@ namespace DarkEnergy.Combat
         private bool initializedImpactAnimations;
         private double counter;
         private float direction;
-        private Vector2 initialDistance;
+        private Vector2 orientation;
         private Vector2 initialPosition;
         private Vector2 targetPosition;
         private const float attackDistance = 0;
-        private const double chargeTime = 0.3;
+        private const double chargeSpeed = 1500;
         private const double attackTime = 0.5;
         private const double castTime = 0.8;
 
@@ -56,7 +56,8 @@ namespace DarkEnergy.Combat
             direction = units.GroupA.Contains(current) ? 1 : -1;
             initialPosition = current.Position;
             targetPosition = new Vector2(target.X + (direction > 0 ? -(current.Width + attackDistance) : (target.Width + attackDistance)), target.Y - (current.Height - target.Height));
-            initialDistance = (targetPosition - action.Current.Position) * direction;
+            orientation = (targetPosition - action.Current.Position) * direction;
+            orientation.Normalize();
 
             action.Current.State = action.Ability.Animation;
 
@@ -83,7 +84,7 @@ namespace DarkEnergy.Combat
         private void chargeAction(GameTime gameTime, CombatAction action)
         {
             var current = action.Current;
-            var modifier = (float)(gameTime.ElapsedGameTime.TotalSeconds * direction / chargeTime) * initialDistance;
+            var modifier = (float)(gameTime.ElapsedGameTime.TotalSeconds * direction * chargeSpeed) * orientation;
             var stop = (direction > 0 && current.Position.X + modifier.X >= targetPosition.X) ? true : (direction < 0 && current.Position.X + modifier.X <= targetPosition.X) ? true : false;
 
             if (stop)
@@ -101,7 +102,7 @@ namespace DarkEnergy.Combat
         private void retreatAction(GameTime gameTime, CombatAction action)
         {
             var current = action.Current;
-            var modifier = (float)(gameTime.ElapsedGameTime.TotalSeconds * -direction / chargeTime) * initialDistance;
+            var modifier = (float)(gameTime.ElapsedGameTime.TotalSeconds * -direction * chargeSpeed) * orientation;
             var stop = (-direction > 0 && current.Position.X + modifier.X >= initialPosition.X) ? true : (-direction < 0 && current.Position.X + modifier.X <= initialPosition.X) ? true : false;
 
             if (stop)

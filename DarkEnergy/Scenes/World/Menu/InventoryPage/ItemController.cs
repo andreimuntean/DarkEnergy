@@ -9,7 +9,7 @@ using DarkEnergy.Inventory.Slots;
 
 namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
 {
-    public enum ItemAction { Use, Toggle, Delete }
+    public enum ItemAction { Use, Toggle, Delete, Buy, Sell }
 
     public class ItemController : TexturedElement
     {
@@ -19,6 +19,17 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
 
         public IItem Item { get; protected set; }
         public int ButtonCount { get; protected set; }
+
+        private InventoryAction status;
+        public InventoryAction Status
+        {
+            get { return status; }
+            set
+            {
+                status = value;
+                Refresh();
+            }
+        }
 
         public ItemController() : base(530, 80, new Vector2(30, 560))
         {
@@ -36,18 +47,31 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
 
         public void Refresh()
         {
-            if (Item is GenericItem)
+            if (Status == InventoryAction.None)
+            {
+                if (Item is GenericItem)
+                {
+                    ButtonCount = 1;
+                    buttons[0].String = Resources.Strings.Item_Delete;
+                }
+                else if (Item is EquippableItem)
+                {
+                    ButtonCount = 2;
+                    buttons[0].String = (GameManager.Inventory.Equipment.ToList().Contains(Item as EquippableItem) ? Resources.Strings.Item_Unequip : Resources.Strings.Item_Equip);
+                    buttons[1].String = Resources.Strings.Item_Delete;
+                }
+                else ButtonCount = 0;
+            }
+            else if (Status == InventoryAction.Buying)
             {
                 ButtonCount = 1;
-                buttons[0].String = Resources.Strings.Item_Delete;
+                buttons[0].String = Resources.Strings.Item_Buy;
             }
-            else if (Item is EquippableItem)
+            else if (Status == InventoryAction.Selling)
             {
-                ButtonCount = 2;
-                buttons[0].String = (GameManager.Inventory.Equipment.ToList().Contains(Item as EquippableItem) ? Resources.Strings.Item_Unequip : Resources.Strings.Item_Equip);
-                buttons[1].String = Resources.Strings.Item_Delete;
+                ButtonCount = 1;
+                buttons[0].String = Resources.Strings.Item_Sell;
             }
-            else ButtonCount = 0;
 
             AdjustElements(null, EventArgs.Empty);
         }
@@ -80,14 +104,25 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
 
         public override void Update(GameTime gameTime)
         {
-            if (Item is GenericItem)
+            if (Status == InventoryAction.None)
             {
-                TouchManager.OnTap(buttons[0], () => OnButtonTapped(ItemAction.Delete));
+                if (Item is GenericItem)
+                {
+                    TouchManager.OnTap(buttons[0], () => OnButtonTapped(ItemAction.Delete));
+                }
+                else if (Item is EquippableItem)
+                {
+                    TouchManager.OnTap(buttons[0], () => OnButtonTapped(ItemAction.Toggle));
+                    TouchManager.OnTap(buttons[1], () => OnButtonTapped(ItemAction.Delete));
+                }
             }
-            else if (Item is EquippableItem)
+            if (Status == InventoryAction.Buying)
             {
-                TouchManager.OnTap(buttons[0], () => OnButtonTapped(ItemAction.Toggle));
-                TouchManager.OnTap(buttons[1], () => OnButtonTapped(ItemAction.Delete));
+                TouchManager.OnTap(buttons[0], () => OnButtonTapped(ItemAction.Buy));
+            }
+            else if (Status == InventoryAction.Selling)
+            {
+                TouchManager.OnTap(buttons[0], () => OnButtonTapped(ItemAction.Sell));
             }
         }
 
@@ -116,12 +151,21 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
         {
             if (ButtonCount == 1)
             {
-                buttons[0].Position = Position + new Vector2(146.5f, 7.5f);
+                buttons[0].Visible = true;
+                buttons[1].Visible = false;
+                buttons[0].Position = Position + new Vector2(278, 7.5f);
             }
             else if (ButtonCount == 2)
             {
+                buttons[0].Visible = true;
+                buttons[1].Visible = true;
                 buttons[0].Position = Position + new Vector2(15, 7.5f);
                 buttons[1].Position = Position + new Vector2(278, 7.5f);
+            }
+            else
+            {
+                buttons[0].Visible = false;
+                buttons[1].Visible = false;
             }
         }
         #endregion

@@ -20,6 +20,7 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
         public ItemViewer Viewer { get; protected set; }
         public ItemController Controller { get; protected set; }
         public ItemListPanel ItemListPanel { get; protected set; }
+        public InventoryData InventoryData { get; protected set; }
 
         public IItem SelectedItem { get; protected set; }
 
@@ -27,9 +28,10 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
         {
             background = new TexturedElement(1280, 720) { Parent = this, Path = @"Interface\World\Menu\InventoryBackground.dds" };
             message = new Text(FontStyle.Calibri24, HorizontalAlignment.Center, 0, VerticalAlignment.Bottom, -20) { Parent = this };
-            Viewer = new ItemViewer();
-            Controller = new ItemController();
-            ItemListPanel = new ItemListPanel();
+            Viewer = new ItemViewer() { Parent = this };
+            Controller = new ItemController() { Parent = this };
+            ItemListPanel = new ItemListPanel(GameManager.Inventory.Items) { Parent = this };
+            InventoryData = new InventoryData() { Parent = this };
 
             Controller.ButtonTapped += Controller_ButtonTapped;
             ItemListPanel.SelectionChanged += ItemListPanel_SelectionChanged;
@@ -92,12 +94,14 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
 
         public void Select(IItem item)
         {
+            SelectedItem = item;
             Viewer.Select(item);
             Controller.Select(item);
         }
 
         public void Deselect()
         {
+            SelectedItem = null;
             Viewer.Deselect();
             Controller.Deselect();
         }
@@ -110,6 +114,7 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
             Controller.Initialize();
             Viewer.Initialize();
             ItemListPanel.Initialize();
+            InventoryData.Initialize();
 
             messageStatus = 0;
             message.Visible = false;
@@ -122,6 +127,7 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
             Controller.LoadContent(contentManager);
             Viewer.LoadContent(contentManager);
             ItemListPanel.LoadContent(contentManager);
+            InventoryData.LoadContent(contentManager);
             base.LoadContent(contentManager);
         }
 
@@ -131,6 +137,7 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
             Controller.Update(gameTime);
             Viewer.Update(gameTime);
             ItemListPanel.Update(gameTime);
+            InventoryData.Update(gameTime);
 
             if (messageStatus > 0)
             {
@@ -170,6 +177,7 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
             Controller.Draw(renderer);
             Viewer.Draw(renderer);
             ItemListPanel.Draw(renderer);
+            InventoryData.Draw(renderer);
         }
 
         public override void UnloadContent(ContentManager contentManager)
@@ -179,6 +187,7 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
             Controller.UnloadContent(contentManager);
             Viewer.UnloadContent(contentManager);
             ItemListPanel.UnloadContent(contentManager);
+            InventoryData.UnloadContent(contentManager);
             base.UnloadContent(contentManager);
         }
 
@@ -189,12 +198,10 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory
 
             if (item != SelectedItem)
             {
-                SelectedItem = item;
                 Select(item);
             }
             else
             {
-                SelectedItem = null;
                 Deselect();
             }
         }

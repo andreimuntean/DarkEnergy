@@ -24,20 +24,27 @@ namespace DarkEnergy.Combat
 
     public class RewardManager
     {
-        private const float experienceBoost = 3.0f;
+        private float experienceRate;
+        private float coinsRate;
+        private float darkCrystalsRate;
+        private float itemRate;
         private Battle battle;
         private Reward? reward;
 
         public RewardManager(Battle battle)
         {
             this.battle = battle;
+            experienceRate = float.Parse(Resources.Rates.Experience);
+            coinsRate = float.Parse(Resources.Rates.Coins);
+            darkCrystalsRate = float.Parse(Resources.Rates.DarkCrystals);
+            itemRate = float.Parse(Resources.Rates.Item);
         }
 
         public Reward? GetReward()
         {
             if (reward == null)
             {
-                int experience = (int)(experienceBoost * CalculateExperienceReceived());
+                int experience = CalculateExperienceReceived();
                 int currency = CalculateCurrencyReceived();
                 int darkCrystals = CalculateDarkCrystalsReceived();
                 List<int> itemIdList = CalculateItemsReceived();
@@ -51,7 +58,7 @@ namespace DarkEnergy.Combat
         public void Assign(List<Character> characters)
         {
             var reward = GetReward().Value;
-            GameManager.Inventory.Currency += reward.Currency;
+            GameManager.Inventory.Coins += reward.Currency;
             GameManager.Inventory.DarkCrystals += reward.DarkCrystals;
             GameManager.Hero.IncreaseExperience(reward.Experience);
         }
@@ -72,23 +79,18 @@ namespace DarkEnergy.Combat
                 }
             }
 
-            return result;
+            return (int)(Math.Round(coinsRate * result));
         }
 
         protected int CalculateDarkCrystalsReceived()
         {
-            int result = 0;
+            var chance = RandomManager.GetDouble();
 
-            if (battle.Victory)
-            {
-                var random = new Random();
-                while (random.NextDouble() <= 0.01 && result < 100)
-                {
-                    result += 1;
-                }
-            }
+            if (darkCrystalsRate > 0) chance /= darkCrystalsRate;
+            else return 0;
 
-            return result;
+            if (chance == 0) return 100;
+            else return (int)(1 / chance / 100);
         }
 
         protected List<int> CalculateItemsReceived()
@@ -119,7 +121,7 @@ namespace DarkEnergy.Combat
                 }
             }
 
-            return result;
+            return (int)(Math.Round(experienceRate * result));
         }
     }
 }

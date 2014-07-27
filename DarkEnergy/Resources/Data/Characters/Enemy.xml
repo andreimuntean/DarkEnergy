@@ -84,4 +84,66 @@
     <experience>40</experience>
     <texture id="10006" width="277" height="275" />
   </enemy>
+  <enemy id="10007">
+    <name language="en-US">Swamp Wasp</name>
+    <element defensive="6" offensive="6" />
+    <attributes damage="5" strength="2" intuition="0" reflexes="2" vitality="6" vigor="2" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200000</ability> <!-- Rip -->
+      <ability>200030</ability> <!-- Venom Spit -->
+    </abilitySet>
+    <currency>70</currency>
+    <experience>50</experience>
+    <texture id="10007" width="250" height="360" />
+  </enemy>
+  <enemy id="10008">
+    <name language="en-US">Blight Wasp</name>
+    <element defensive="5" offensive="5" />
+    <attributes damage="7" strength="1" intuition="0" reflexes="2" vitality="6" vigor="3" />
+    <abilitySet name="Abilities" template="0">
+      <ability>100040</ability> <!-- Infest -->
+      <ability>200000</ability> <!-- Rip -->
+      <ability>200030</ability> <!-- Venom Spit -->
+    </abilitySet>
+    <currency>90</currency>
+    <experience>80</experience>
+    <texture id="10008" width="250" height="360" />
+  </enemy>
+  <enemy id="10009">
+    <name language="en-US">Dark Hound</name>
+    <element defensive="5" offensive="5" />
+    <attributes damage="10" strength="3" intuition="0" reflexes="5" vitality="4" vigor="3" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200000</ability> <!-- Rip -->
+      <ability>200010</ability> <!-- Bite -->
+    </abilitySet>
+    <currency>90</currency>
+    <experience>100</experience>
+    <texture id="10009" width="379" height="300" />
+  </enemy>
+  <enemy id="10010">
+    <name language="en-US">Dread Walker</name>
+    <element defensive="5" offensive="5" />
+    <attributes damage="15" strength="3" intuition="8" reflexes="1" vitality="4" vigor="2" />
+    <abilitySet name="Abilities" template="0">
+      <ability>100040</ability> <!-- Infest -->
+      <ability>200000</ability> <!-- Rip -->
+      <ability>200010</ability> <!-- Bite -->
+    </abilitySet>
+    <currency>120</currency>
+    <experience>150</experience>
+    <texture id="10010" width="292" height="450" />
+  </enemy>
+  <enemy id="10011">
+    <name language="en-US">Hell Hound</name>
+    <element defensive="7" offensive="7" />
+    <attributes damage="8" strength="3" intuition="0" reflexes="5" vitality="5" vigor="3" />
+    <abilitySet name="Abilities" template="0">
+      <ability>200000</ability> <!-- Rip -->
+      <ability>200010</ability> <!-- Bite -->
+    </abilitySet>
+    <currency>90</currency>
+    <experience>100</experience>
+    <texture id="10011" width="379" height="300" />
+  </enemy>
 </enemies>

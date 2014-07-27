@@ -4,9 +4,9 @@ using SharpDX.Toolkit;
 
 namespace DarkEnergy
 {
-    public class DarkEnergyGame : Game
+    public sealed class DarkEnergyGame : Game
     {
-        public Screen Screen { get; protected set; }
+        public Screen Screen { get; private set; }
 
         public GameSystem Scene { get; set; }
 

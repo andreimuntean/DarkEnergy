@@ -49,9 +49,9 @@ namespace DarkEnergy.Scenes.World.Westhill
 
             TouchManager.OnTap(acolyte, () => SceneManager.Play(new AcolyteDialogue()));
 
-            TouchManager.OnTap(generalStore, () => SceneManager.Play(new Westhill.GeneralStore()));
+            TouchManager.OnTap(generalStore, () => SceneManager.Play(new VendorMenu(this, 10000)));
             
-            TouchManager.OnTap(portal, () => SceneManager.Play(new Westhill.Lake()));
+            TouchManager.OnTap(portal, () => SceneManager.Play(new Lake()));
             
             TouchManager.OnTap(forest, () =>
             {
@@ -63,7 +63,7 @@ namespace DarkEnergy.Scenes.World.Westhill
                 if (heroLevel >= 2) enemies.Count.Add(2);
                 if (heroLevel >= 7) enemies.Count.Add(3);
 
-                CombatSceneManager.Engage(this, 8, enemies.GetList());
+                CombatSceneManager.Engage(this, 10000, enemies.GetList());
             });
 
             forest.Update(gameTime);

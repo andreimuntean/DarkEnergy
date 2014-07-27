@@ -16,8 +16,8 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
         private List<CalligraphedImage> buttons;
 
         public IItem Item { get; protected set; }
-
         public int ButtonCount { get; protected set; }
+        public bool ValueDisplayed { get; set; }
 
         private int selectedView;
         public int SelectedView
@@ -67,14 +67,27 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
 
         public void Refresh()
         {
+            Func<string, string> formatDescription = (text) =>
+            {
+                if (ValueDisplayed)
+                {
+                    return text;
+                }
+                else
+                {
+                    var start = text.IndexOf(Resources.Strings.Item_Value);
+                    return text.Remove(start, text.Length - start);
+                }
+            };
+
             name.String = Item.Name;
             slot.String = Item.GetType().Name;
-
+            
             if (Item is EquippableItem)
             {
                 var equippableItem = Item as EquippableItem;
-                
-                description.String = equippableItem.GetDescription(GameManager.Inventory.GetEquippedItem(equippableItem.Slot));
+                var text = equippableItem.GetDescription(GameManager.Inventory.GetEquippedItem(equippableItem.Slot));
+                description.String = formatDescription(text);
                 
                 ButtonCount = 2;
                 buttons[0].String = Resources.Strings.InventoryMenu_Details;
@@ -90,7 +103,8 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
             }
             else
             {
-                description.String = Item.GetDescription();
+                var text = Item.GetDescription();
+                description.String = formatDescription(text);
 
                 if (Item is GenericItem)
                 {
@@ -130,6 +144,7 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
             buttons.ForEach(button => button.Initialize());
             characterPreview.Scale = new Vector2(0.65f);
             SelectedView = 0;
+            ValueDisplayed = true;
             Visible = false;
         }
 

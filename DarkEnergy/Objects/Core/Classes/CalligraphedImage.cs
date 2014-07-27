@@ -109,12 +109,6 @@ namespace DarkEnergy
             base.LoadContent(contentManager);
         }
 
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-            text.Update(gameTime);
-        }
-
         public override void Draw(Renderer renderer)
         {
             base.Draw(renderer);

@@ -278,7 +278,7 @@ namespace DarkEnergy.Characters
 
             Action<float, float, string> writeLine = (a, b, name) =>
             {
-                result += a + " (";
+                result += (a > 0 ? a + " (" : "(");
 
                 var difference = a - b;
                 if (difference > 0) result += "+";
@@ -291,10 +291,14 @@ namespace DarkEnergy.Characters
 
             foreach (var key in attributes.Keys)
             {
-                if (attributes[key] == 0)
-                    break;
-
-                writeLine(attributes[key], comparisonAttributes[key], key);
+                if (attributes[key] > 0)
+                {
+                    writeLine(attributes[key], comparisonAttributes[key], key);
+                }
+                else if (comparisonAttributes[key] > 0)
+                {
+                    writeLine(0, comparisonAttributes[key], key);
+                }
             }
 
             return result;

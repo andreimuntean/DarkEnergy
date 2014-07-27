@@ -6,6 +6,8 @@ using DarkEnergy.Characters;
 using DarkEnergy.Characters.Hero;
 using DarkEnergy.Inventory;
 using DarkEnergy.Inventory.Slots;
+using DarkEnergy.Trading;
+using DarkEnergy.Resources;
 
 namespace DarkEnergy
 {
@@ -21,12 +23,13 @@ namespace DarkEnergy
         }
     }
 
-    static class DataManager
+    public static class DataManager
     {
-        public static string AbilityDirectory { get { return RootDirectory + @"Abilities\"; } }
-        public static string CharacterDirectory { get { return RootDirectory + @"Characters\"; } }
-        public static string ItemDirectory { get { return RootDirectory + @"Items\"; } }
-        public static string RootDirectory { get { return @"Resources\Data\"; } }
+        public static string AbilityDirectory { get { return RootDirectory + Resources.Paths.Ability; } }
+        public static string CharacterDirectory { get { return RootDirectory + Resources.Paths.Character; } }
+        public static string ItemDirectory { get { return RootDirectory + Resources.Paths.Item; } }
+        public static string RootDirectory { get { return Resources.Paths.Root; } }
+        public static string VendorDirectory { get { return RootDirectory + Resources.Paths.Vendor; } }
 
         #region Read Item
         private static string getItemType(string id)
@@ -275,6 +278,75 @@ namespace DarkEnergy
         }
         #endregion
 
+        #region Read Vendor
+        private static List<Data> readVendor(XmlReader reader, string id)
+        {
+            List<Data> data = new List<Data>();
+
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.EndElement)
+                {
+                    if (reader.Name == "vendor")
+                    {
+                        break;
+                    }
+                }
+                else if (reader.NodeType == XmlNodeType.Element)
+                {
+                    var element = reader.Name;
+                    switch (element)
+                    {
+                        case "priceModifier":
+                            data.Add(new Data(reader.ReadElementContentAsFloat(), element));
+                            break;
+
+                        case "tradeModifier":
+                            data.Add(new Data(reader.ReadElementContentAsFloat(), element));
+                            break;
+
+                        case "items":
+                            var idList = new List<int>();
+                            var stackList = new List<int>();
+                            var priceList = new List<int>();
+                            var currencyList = new List<Currency>();
+
+                            while (reader.Read())
+                            {
+                                if (reader.NodeType == XmlNodeType.EndElement)
+                                {
+                                    if (reader.Name == "items")
+                                    {
+                                        data.Add(new Data(idList, "idList"));
+                                        data.Add(new Data(stackList, "stackList"));
+                                        data.Add(new Data(priceList, "priceList"));
+                                        data.Add(new Data(currencyList, "currencyList"));
+                                        break;
+                                    }
+                                }
+                                else if (reader.NodeType == XmlNodeType.Element)
+                                {
+                                    var itemId = (reader["id"] != null) ? int.Parse(reader["id"]) : 0;
+                                    var count = (reader["count"] != null) ? int.Parse(reader["count"]) : 1;
+                                    var forcePrice = (reader["forcePrice"] != null) ? int.Parse(reader["forcePrice"]) : 0;
+                                    var currency = (reader["currency"] != null) ? (Currency)(int.Parse(reader["currency"])) : Currency.Coins;
+
+                                    idList.Add(itemId);
+                                    stackList.Add(count);
+                                    priceList.Add(forcePrice);
+                                    currencyList.Add(currency);
+                                }
+                            }
+
+                            break;
+                    }
+                }
+            }
+
+            return data;
+        }
+        #endregion
+
         private static List<Data> read(string path, string name, string id)
         {
             XmlReaderSettings xmlSettings = new XmlReaderSettings() { ConformanceLevel = ConformanceLevel.Document };
@@ -292,6 +364,7 @@ namespace DarkEnergy
                             case "Ability": return readAbility(reader, id);
                             case "Enemy": return readEnemy(reader, id);
                             case "Item": return readItem(reader, id);
+                            case "Vendor": return readVendor(reader, id);
                         }
                     }
                 }
@@ -568,6 +641,31 @@ namespace DarkEnergy
 
                         return new Enemy(name, elements[0], elements[1], enemyAttributes, abilitySets, currency, experience, textureId, width, height);
                     }
+
+                case "Vendor":
+                    {
+                        float priceModifier = 0;
+                        float tradeModifier = 0;
+                        List<int> idList = new List<int>();
+                        List<int> stackList = new List<int>();
+                        List<int> priceList = new List<int>();
+                        List<Currency> currencyList = new List<Currency>();
+
+                        foreach (var attribute in attributes)
+                        {
+                            switch (attribute.Name)
+                            {
+                                case "priceModifier": priceModifier = (float)attribute.Value; break;
+                                case "tradeModifier": tradeModifier = (float)attribute.Value; break;
+                                case "idList": idList = (List<int>)attribute.Value; break;
+                                case "stackList": stackList = (List<int>)attribute.Value; break;
+                                case "priceList": priceList = (List<int>)attribute.Value; break;
+                                case "currencyList": currencyList = (List<Currency>)attribute.Value; break;
+                            }
+                        }
+
+                        return new Vendor(idList, stackList, priceList, currencyList, priceModifier, tradeModifier);
+                    }
             }
             return null;
         }
@@ -596,6 +694,10 @@ namespace DarkEnergy
                     else if (type == typeof(Enemy))
                     {
                         attributes = read(CharacterDirectory + name + ".xml", name, index);
+                    }
+                    else if (type == typeof(Vendor))
+                    {
+                        attributes = read(VendorDirectory + name + ".xml", name, index);
                     }
                     else if (typeof(IItem).IsAssignableFrom(type))
                     {

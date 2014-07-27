@@ -1,10 +1,11 @@
-﻿using SharpDX;
+﻿using System;
+using SharpDX;
 using SharpDX.Toolkit;
 using SharpDX.Toolkit.Graphics;
 
 namespace DarkEnergy
 {
-    public class Renderer
+    public sealed class Renderer : IDisposable
     {
         private GraphicsDevice graphicsDevice;
         private GraphicsDeviceManager graphicsDeviceManager;
@@ -20,7 +21,7 @@ namespace DarkEnergy
             set { graphicsDeviceManager.SynchronizeWithVerticalRetrace = value; }
         }
 
-        public Vector2 Scaling { get; protected set; }
+        public Vector2 Scaling { get; private set; }
 
         public Renderer(DarkEnergyGame game)
         {
@@ -124,10 +125,15 @@ namespace DarkEnergy
             IsRendering = false;
         }
 
-        public void UnloadContent()
+        public void Dispose()
         {
             graphicsDeviceManager.Dispose();
             spriteBatch.Dispose();
+        }
+
+        public void UnloadContent()
+        {
+            Dispose();
         }
     }
 }

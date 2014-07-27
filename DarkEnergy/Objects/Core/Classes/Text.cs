@@ -99,52 +99,46 @@ namespace DarkEnergy
 
         public float MaxWidth { get; set; }
 
-        public Text() : base()
-        {
-            String = "";
-            Color = Color.White;
-        }
-
         public Text(string style) : base()
         {
-            String = "";
             Color = Color.White;
             Style = style;
+            text = "";
         }
 
         public Text(string style, Vector2 position) : base(position)
         {
-            String = "";
             Color = Color.White;
             Style = style;
+            text = "";
         }
 
         public Text(string style, float x, float y) : base(x, y)
         {
-            String = "";
             Color = Color.White;
             Style = style;
+            text = "";
         }
 
         public Text(string style, HorizontalAlignment horizontalAlignment, float horizontalOffset, float y) : base(horizontalAlignment, horizontalOffset, y)
         {
-            String = "";
             Color = Color.White;
             Style = style;
+            text = "";
         }
 
         public Text(string style, float x, VerticalAlignment verticalAlignment, float verticalOffset) : base(x, verticalAlignment, verticalOffset)
         {
-            String = "";
             Color = Color.White;
             Style = style;
+            text = "";
         }
 
         public Text(string style, HorizontalAlignment horizontalAlignment, float horizontalOffset, VerticalAlignment verticalAlignment, float verticalOffset) : base(horizontalAlignment, horizontalOffset, verticalAlignment, verticalOffset)
         {
-            String = "";
             Color = Color.White;
             Style = style;
+            text = "";
         }
 
         public Vector2 MeasureString(string value)
@@ -159,7 +153,10 @@ namespace DarkEnergy
             }
         }
 
-        public override void Initialize() { base.Initialize(); }
+        public override void Initialize()
+        {
+            base.Initialize();
+        }
 
         public override void LoadContent(ContentManager contentManager)
         {

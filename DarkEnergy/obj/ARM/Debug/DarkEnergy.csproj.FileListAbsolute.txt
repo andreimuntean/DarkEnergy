@@ -107,6 +107,8 @@ D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\DarkEn
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\App.g.cs
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\Screen.g.cs
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\DarkEnergy.g.resources
+D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\DarkEnergy.Resources.Rates.resources
+D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\DarkEnergy.Resources.Paths.resources
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\DarkEnergy.Resources.Dialogue.resources
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\DarkEnergy.Resources.Strings.resources
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\ARM\Debug\DarkEnergy.Resources.Settings.resources

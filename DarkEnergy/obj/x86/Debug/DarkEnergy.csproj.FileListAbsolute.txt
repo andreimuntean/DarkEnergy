@@ -57,3 +57,5 @@ D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\x86\Debug\DarkEn
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\x86\Debug\DarkEnergy.pdb
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\x86\Debug\XapCacheFile.xml
 D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\Bin\x86\Debug\Assets\Fonts\Calibri18.tkb
+D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\x86\Debug\DarkEnergy.Resources.Rates.resources
+D:\Programming\Windows Phone Projects\DarkEnergy\DarkEnergy\obj\x86\Debug\DarkEnergy.Resources.Paths.resources

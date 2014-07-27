@@ -575,4 +575,22 @@
   <data name="CharacterNameAlert" xml:space="preserve">
     <value>You must name your character.</value>
   </data>
+  <data name="TradingSell" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="TradingBuy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="Item_Buy" xml:space="preserve">
+    <value>Buy</value>
+  </data>
+  <data name="Item_Sell" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="Currency_Coins" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Currency_DarkCrystals" xml:space="preserve">
+    <value>DC</value>
+  </data>
 </root>

@@ -6,15 +6,15 @@ using DarkEnergy.Combat;
 
 namespace DarkEnergy.Abilities.Visual
 {
-    public class Frenzy : AbilityVisual
+    public sealed class Frenzy : AbilityVisual
     {
         private const float fadeTime = 0.25f;
         private const float pausedTime = 0.5f;
         private const float totalMovement = 25f;
         private float elapsedTime;
-        protected TexturedElement effect;
-        protected Vector2 start;
-        protected Vector2 end;
+        private TexturedElement effect;
+        private Vector2 start;
+        private Vector2 end;
 
         public Frenzy(CombatAction action) : base(action)
         {

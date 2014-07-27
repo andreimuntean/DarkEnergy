@@ -17,9 +17,11 @@ namespace DarkEnergy.Combat
     public class Units : GameSystem
     {
         private Battle battle;
-        private const float horizontalScreenDistance = 220;
-        private const float verticalScreenDistance = 450;
-        private const float distanceBetweenUnits = 115;
+        private const float leftDistance = 220;
+        private const float rightDistance = 300;
+        private const float topDistance = 450;
+        private const float distanceBetweenLeftUnits = 115;
+        private const float distanceBetweenRightUnits = 150;
 
         public event EventHandler PositionChanged;
         public event EventHandler CurrentChanged;
@@ -29,16 +31,16 @@ namespace DarkEnergy.Combat
         {
             get
             {
-                var left = horizontalScreenDistance;
-                var right = Screen.NativeResolution.X - horizontalScreenDistance;
-                var top = verticalScreenDistance;
+                var left = leftDistance;
+                var right = Screen.NativeResolution.X - rightDistance;
+                var top = topDistance;
                 return new List<Vector2>(6)
                 {
-                    new Vector2(left + 2 * distanceBetweenUnits - (GroupA.Count > 0 ? GroupA[0].Width : 0), top + 100 - (GroupA.Count > 0 ? GroupA[0].Height : 0)),
-                    new Vector2(left + distanceBetweenUnits - (GroupA.Count > 1 ? GroupA[1].Width : 0), top - (GroupA.Count > 1 ? GroupA[1].Height : 0)),
+                    new Vector2(left + 2 * distanceBetweenLeftUnits - (GroupA.Count > 0 ? GroupA[0].Width : 0), top + 100 - (GroupA.Count > 0 ? GroupA[0].Height : 0)),
+                    new Vector2(left + distanceBetweenLeftUnits - (GroupA.Count > 1 ? GroupA[1].Width : 0), top - (GroupA.Count > 1 ? GroupA[1].Height : 0)),
                     new Vector2(left - (GroupA.Count > 2 ? GroupA[2].Width : 0), top + 150 - (GroupA.Count > 2 ? GroupA[2].Height : 0)),
-                    new Vector2(right - 2 *distanceBetweenUnits, top + 100 - (GroupB.Count > 0 ? GroupB[0].Height : 0)),
-                    new Vector2(right - distanceBetweenUnits, top - (GroupB.Count > 1 ? GroupB[1].Height : 0)),
+                    new Vector2(right - 2 *distanceBetweenRightUnits, top + 100 - (GroupB.Count > 0 ? GroupB[0].Height : 0)),
+                    new Vector2(right - distanceBetweenRightUnits, top - (GroupB.Count > 1 ? GroupB[1].Height : 0)),
                     new Vector2(right, top + 150 - (GroupB.Count > 2 ? GroupB[2].Height : 0))
                 };
             }

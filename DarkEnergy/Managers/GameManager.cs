@@ -33,78 +33,14 @@ namespace DarkEnergy
         public static void InitializeInventory()
         {
             Inventory.Clear();
-            Inventory.Capacity = 60;
-            Inventory.Currency = 0;
+            Inventory.Capacity = 40;
+            Inventory.Coins = 0;
             Inventory.DarkCrystals = 0;
 
             Inventory.Add(100005);
             Inventory.Add(140000);
             Inventory.Add(180000);
             Inventory.Add(190000);
-
-            // Vendors are not currently active in the game,
-            // therefore I have decided to have the character
-            // start with a wide set of weapons and armor in
-            // order to showcase the inventory system.
-
-            #region Extra items
-            Inventory.Add(120000);
-            Inventory.Add(130000);
-            Inventory.Add(150001);
-            Inventory.Add(160001);
-            Inventory.Add(170000);
-
-            Inventory.Add(110000);
-            Inventory.Add(110001);
-            Inventory.Add(110002);
-            Inventory.Add(110003);
-            Inventory.Add(110004);
-            Inventory.Add(110005);
-
-            Inventory.Add(100000);
-
-            Inventory.Add(140001);
-            Inventory.Add(140002);
-            Inventory.Add(140003);
-            Inventory.Add(140004);
-            Inventory.Add(140005);
-            Inventory.Add(140006);
-            Inventory.Add(140007);
-            Inventory.Add(140008);
-            Inventory.Add(140009);
-            Inventory.Add(140010);
-            Inventory.Add(140011);
-
-            Inventory.Add(100010);
-
-            Inventory.Add(180001);
-            Inventory.Add(180002);
-            Inventory.Add(180003);
-            Inventory.Add(180004);
-            Inventory.Add(180005);
-            Inventory.Add(180006);
-            Inventory.Add(180007);
-            Inventory.Add(180008);
-            Inventory.Add(180009);
-            Inventory.Add(180010);
-            Inventory.Add(180011);
-
-            Inventory.Add(100011);
-
-            Inventory.Add(190001);
-            Inventory.Add(190002);
-            Inventory.Add(190003);
-            Inventory.Add(190004);
-            Inventory.Add(190005);
-            Inventory.Add(190006);
-            Inventory.Add(190007);
-            Inventory.Add(190008);
-            Inventory.Add(190009);
-            Inventory.Add(190010);
-            Inventory.Add(190011);
-
-            Inventory.Add(100020);
-            #endregion
 
             Inventory.Equip(Inventory.Equipment, 100005, 140000, 180000, 190000);
         }
@@ -156,13 +92,13 @@ namespace DarkEnergy
             SelectedCharacter = characterId;
 
             Action action = () =>
-                {
-                    Inventory.LoadData();
-                    Quests.LoadData();
-                    Hero.LoadData();
-                    
-                    SceneManager.Play(DataStorageManager.LoadScene());
-                };
+            {
+                Inventory.LoadData();
+                Quests.LoadData();
+                Hero.LoadData();
+
+                SceneManager.Play(DataStorageManager.LoadScene());
+            };
 
             LoadingScreenManager.Show(action, Resources.Strings.LoadingWorld);
         }

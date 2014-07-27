@@ -5,6 +5,7 @@ namespace DarkEnergy
 {
     static class TouchManager
     {
+        private static bool skipRelease;
         private static int memoryTap, memoryManipulationEnd;
 
         public static bool Enabled { get; set; }
@@ -34,11 +35,15 @@ namespace DarkEnergy
 
         public static void Release(Vector2 translation)
         {
-            if (Enabled && translation == Vector2.Zero)
+            if (!skipRelease)
             {
-                memoryManipulationEnd = 2;
-                IsHandlingRelease = true;
+                if (Enabled && translation == Vector2.Zero)
+                {
+                    memoryManipulationEnd = 2;
+                    IsHandlingRelease = true;
+                }
             }
+            else skipRelease = false;
         }
 
         /// <summary>
@@ -49,6 +54,7 @@ namespace DarkEnergy
         {
             if (IsTapped)
             {
+                skipRelease = true;
                 action();
                 StopHandlingTap();
             }
@@ -63,6 +69,7 @@ namespace DarkEnergy
         {
             if (target.Tapped)
             {
+                skipRelease = true;
                 action();
                 StopHandlingTap();
             }
@@ -78,6 +85,7 @@ namespace DarkEnergy
         {
             if (target.Tapped)
             {
+                skipRelease = true;
                 action();
                 StopHandlingTap();
                 isTapped = true;

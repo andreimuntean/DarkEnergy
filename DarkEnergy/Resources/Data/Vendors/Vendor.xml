@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<vendors>
+  <vendor id="10000">
+    <priceModifier>0.4</priceModifier>
+    <tradeModifier>0.3</tradeModifier>
+    <items>
+      <!--Weapons-->
+      <item id="100000" />
+      <item id="100005" />
+      <item id="100010" />
+      <item id="100023" forcePrice="1" currency="1" />
+      
+      <!--Armor-->
+      <item id="140000" />
+      <item id="180000" />
+      <item id="190000" />
+      <item id="140005" />
+      <item id="180005" />
+      <item id="190005" />
+      <item id="140002" />
+      <item id="180002" />
+      <item id="190002" />
+      <item id="140009" />
+      <item id="180009" />
+      <item id="190009" />
+      <item id="140011" />
+      <item id="180011" />
+      <item id="190011" />
+      <item id="110000" />
+      <item id="110001" />
+      <item id="110002" />
+      <item id="110003" />
+      <item id="110004" />
+      <item id="110005" />
+    </items>
+  </vendor>
+</vendors>

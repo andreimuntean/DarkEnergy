@@ -29,7 +29,7 @@ namespace DarkEnergy.Abilities.Visual
 
         public bool DrawAboveUnits { get; protected set; }
 
-        public virtual List<TexturedElement> Components { get; protected set; }
+        public List<TexturedElement> Components { get; protected set; }
 
         public AbilityVisual(CombatAction action)
         {

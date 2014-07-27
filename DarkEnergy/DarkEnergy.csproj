@@ -112,6 +112,18 @@
     <Compile Include="Objects\Combat\EnemyList.cs" />
     <Compile Include="Objects\Inventory\Classes\Slots\Relic.cs" />
     <Compile Include="Objects\Party\PartySystem.cs" />
+    <Compile Include="Objects\Vendor\Price.cs" />
+    <Compile Include="Objects\Vendor\Vendor.cs" />
+    <Compile Include="Resources\Rates.Designer.cs">
+      <DependentUpon>Rates.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Paths.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Paths.resx</DependentUpon>
+    </Compile>
     <Compile Include="Scenes\BattleEndScreen\BattleEndScreen.cs" />
     <Compile Include="Objects\Combat\Classes\Interface\CombatText.cs" />
     <Compile Include="Objects\Combat\Classes\TurnData.cs" />
@@ -148,6 +160,7 @@
     <Compile Include="Objects\Combat\Classes\Interface\UnitFrames\UnitFrames.cs" />
     <Compile Include="Objects\Combat\Classes\Units.cs" />
     <Compile Include="Scenes\BattleEndScreen\BattleEndScreenObjects.cs" />
+    <Compile Include="Scenes\World\Vendor\TradingSwitch.cs" />
     <Compile Include="Scenes\World\Menu\AbilitiesPage\AbilityPanel.cs" />
     <Compile Include="Scenes\World\Menu\AbilitiesPage\AbilityPage.cs" />
     <Compile Include="Scenes\World\Menu\AbilitiesPage\AbilityWidePanel.cs" />
@@ -206,6 +219,8 @@
     <Compile Include="Scenes\World\Menu\CharacterMenu.cs" />
     <Compile Include="Scenes\World\Menu\AttributesPage\AttributesPage.cs" />
     <Compile Include="Scenes\World\Menu\AbilitiesPage\AbilitiesPage.cs" />
+    <Compile Include="Scenes\World\Vendor\VendorMenu.cs" />
+    <Compile Include="Scenes\World\Menu\InventoryPage\InventoryData.cs" />
     <Compile Include="Scenes\World\Menu\InventoryPage\ItemSlot.cs" />
     <Compile Include="Scenes\World\Menu\InventoryPage\ItemController.cs" />
     <Compile Include="Scenes\World\Menu\InventoryPage\ItemViewer.cs" />
@@ -220,7 +235,6 @@
     <Compile Include="Scenes\World\Menu\QuestsPage\QuestsPage.cs" />
     <Compile Include="Scenes\World\Objects\MapMarker.cs" />
     <Compile Include="Scenes\World\Scenes\Westhill\Lake.cs" />
-    <Compile Include="Scenes\World\Scenes\Westhill\GeneralStore.cs" />
     <Compile Include="Scenes\World\Scenes\Westhill\Village.cs" />
     <Compile Include="Scenes\World\Menu\WorldScene.cs" />
     <Compile Include="Screen.xaml.cs">
@@ -293,6 +307,11 @@
     <Content Include="Assets\Characters\Enemies\10004.dds" />
     <Content Include="Assets\Characters\Enemies\10005.dds" />
     <Content Include="Assets\Characters\Enemies\10006.dds" />
+    <Content Include="Assets\Characters\Enemies\10007.dds" />
+    <Content Include="Assets\Characters\Enemies\10008.dds" />
+    <Content Include="Assets\Characters\Enemies\10009.dds" />
+    <Content Include="Assets\Characters\Enemies\10010.dds" />
+    <Content Include="Assets\Characters\Enemies\10011.dds" />
     <Content Include="Assets\Characters\Hero\Female\Face1.dds" />
     <Content Include="Assets\Characters\Hero\Female\Face2.dds" />
     <Content Include="Assets\Characters\Hero\Female\Face3.dds" />
@@ -330,6 +349,18 @@
     <Content Include="Assets\Characters\Hero\Skin4_HandOverWeapon.dds" />
     <Content Include="Assets\Characters\Hero\Skin5.dds" />
     <Content Include="Assets\Characters\Hero\Skin5_HandOverWeapon.dds" />
+    <Content Include="Assets\Interface\World\Menu\VendorBackground.dds" />
+    <Content Include="Assets\Interface\World\Menu\VendorPlayerSwitch.dds" />
+    <Content Include="Assets\World\Scenes\Combat\10000.dds" />
+    <Content Include="Assets\World\Scenes\Combat\10001.dds" />
+    <Content Include="Assets\World\Scenes\Combat\10002.dds" />
+    <Content Include="Assets\World\Scenes\Combat\10003.dds" />
+    <Content Include="Assets\World\Scenes\Combat\10004.dds" />
+    <Content Include="Assets\World\Scenes\Combat\10005.dds" />
+    <Content Include="Assets\World\Scenes\Combat\10006.dds" />
+    <Content Include="Resources\Data\Vendors\Vendor.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <ToolkitFont Include="Assets\Fonts\CenturyGothic16.xml">
       <SubType>Designer</SubType>
     </ToolkitFont>
@@ -524,15 +555,6 @@
     <Content Include="Assets\World\DialogueAcolyteBackground.dds" />
     <Content Include="Assets\Interface\World\Menu\GeneralBackground.dds" />
     <Content Include="Assets\Interface\World\Menu\Button.dds" />
-    <Content Include="Assets\World\Scenes\Combat\1.dds" />
-    <Content Include="Assets\World\Scenes\Combat\2.dds" />
-    <Content Include="Assets\World\Scenes\Combat\3.dds" />
-    <Content Include="Assets\World\Scenes\Combat\4.dds" />
-    <Content Include="Assets\World\Scenes\Combat\5.dds" />
-    <Content Include="Assets\World\Scenes\Combat\6.dds" />
-    <Content Include="Assets\World\Scenes\Combat\7.dds" />
-    <Content Include="Assets\World\Scenes\Combat\8.dds" />
-    <Content Include="Assets\World\Scenes\Westhill\GeneralStore.dds" />
     <Content Include="Assets\World\Scenes\Westhill\Lake.dds" />
     <Content Include="Assets\World\Scenes\Westhill\Map.dds" />
     <Content Include="Resources\Data\Abilities\Ability.xml">
@@ -566,6 +588,14 @@
     <Content Include="Assets\Interface\TitleScreen.dds" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Rates.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Rates.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Paths.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Paths.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Dialogue.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Dialogue.Designer.cs</LastGenOutput>
@@ -579,9 +609,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Objects\Vendors\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <Import Project="$(SharpDXSDKDir)\SharpDX.targets" />

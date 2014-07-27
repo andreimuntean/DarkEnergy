@@ -15,8 +15,8 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
     {
         public event EventHandler SelectionChanged;
 
+        private Region inventoryRegion;
         private List<CalligraphedImage> filterButtons;
-        private Text capacity, currency, darkCrystals;
 
         private ItemFilter filter;
         public ItemFilter Filter
@@ -29,11 +29,32 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
             }
         }
 
+        private List<IItem> items;
+        public List<IItem> Items
+        {
+            get { return items; }
+            set
+            {
+                items = value;
+                LoadSlots();
+            }
+        }
+
         public List<ItemSlot> Slots { get; protected set; }
 
         public Vector2 ItemSlotsTotalSize { get { return new Vector2(600, 70 + 65 * (Slots.Count - 1)); } }
-        public Vector2 Position { get; set; }
         public float VerticalScroll { get; set; }
+
+        private Vector2 position;
+        public Vector2 Position
+        {
+            get { return position; }
+            set
+            {
+                position = value;
+                AdjustElements(null, EventArgs.Empty);
+            }
+        }
 
         private IItem selectedItem;
         public IItem SelectedItem
@@ -46,12 +67,10 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
             }
         }
 
-        public ItemListPanel()
+        public ItemListPanel(List<IItem> items)
         {
+            this.items = items;
             Position = new Vector2(620, 120);
-            darkCrystals = new Text(FontStyle.Calibri20) { Parent = this, String = GameManager.Inventory.DarkCrystals.ToString() };
-            currency = new Text(FontStyle.Calibri20) { Parent = this, String = GameManager.Inventory.Currency.ToString() };
-            capacity = new Text(FontStyle.Calibri20) { Parent = this, String = "" };
 
             filterButtons = new List<CalligraphedImage>()
             {
@@ -90,7 +109,7 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
         {
             Slots = new List<ItemSlot>();
 
-            foreach (var item in GameManager.Inventory.Items)
+            foreach (var item in items)
             {
                 switch (Filter)
                 {
@@ -108,6 +127,11 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
             AdjustElements(this, EventArgs.Empty);
         }
 
+        public void LoadSlots(List<IItem> items)
+        {
+            Items = items;
+        }
+
         /// <summary>
         /// Refreshes the toggle status of the item.
         /// </summary>
@@ -122,9 +146,6 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
         public override void Initialize()
         {
             base.Initialize();
-            darkCrystals.Initialize();
-            currency.Initialize();
-            capacity.Initialize();
             filterButtons.ForEach(button => button.Initialize());
             Filter = ItemFilter.All;
             VerticalScroll = 0;
@@ -134,9 +155,6 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
         {
             filterButtons.ForEach(button => button.LoadContent(contentManager));
             Slots.ForEach(slot => slot.LoadContent(contentManager));
-            darkCrystals.LoadContent(contentManager);
-            currency.LoadContent(contentManager);
-            capacity.LoadContent(contentManager);
             base.LoadContent(contentManager);
         }
 
@@ -159,12 +177,10 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
                     TouchManager.OnRelease(slot, () => SelectedItem = slot.Item);
                 });
 
-                Region inventory = new Region(Position + new Vector2(10, 80), new Vector2(610, 370));
-
-                TouchManager.OnDrag(inventory, () =>
+                TouchManager.OnDrag(inventoryRegion, () =>
                 {
                     Scroll(TouchManager.Delta.Y);
-                    AdjustElements(null, EventArgs.Empty);
+                    AdjustElements(inventoryRegion, EventArgs.Empty);
                 });
             }
         }
@@ -177,28 +193,31 @@ namespace DarkEnergy.Scenes.World.Menu.Inventory.Inventory
         public override void Draw(Renderer renderer)
         {
             filterButtons.ForEach(button => button.Draw(renderer));
-            darkCrystals.Draw(renderer);
-            currency.Draw(renderer);
-            capacity.Draw(renderer);
         }
 
         public override void UnloadContent(ContentManager contentManager)
         {
             filterButtons.ForEach(button => button.UnloadContent(contentManager));
             Slots.ForEach(slot => slot.UnloadContent(contentManager));
-            darkCrystals.UnloadContent(contentManager);
-            currency.UnloadContent(contentManager);
-            capacity.UnloadContent(contentManager);
             base.UnloadContent(contentManager);
         }
 
         #region Events
         protected void AdjustElements(object sender, EventArgs e)
         {
-            darkCrystals.Position = Position + new Vector2(75, 465);
-            currency.Position = Position + new Vector2(555 - currency.Width, 465);
-            capacity.String = GameManager.Inventory.Count + "/" + GameManager.Inventory.Capacity;
-            capacity.Position = Position + new Vector2((630 - capacity.Width) / 2, 465);
+            if (IsLoaded)
+            {
+                inventoryRegion = new Region(Position + new Vector2(10, 80), new Vector2(610, 370));
+
+                // Readjusting every element while scrolling would be redundant.
+                if (sender != inventoryRegion)
+                {
+                    filterButtons[0].Position = Position + new Vector2(8, 8);
+                    filterButtons[1].Position = Position + new Vector2(163, 8);
+                    filterButtons[2].Position = Position + new Vector2(317, 8);
+                    filterButtons[3].Position = Position + new Vector2(472, 8);
+                }
+            }
         }
 
         protected void OnSelectionChanged(EventArgs e)

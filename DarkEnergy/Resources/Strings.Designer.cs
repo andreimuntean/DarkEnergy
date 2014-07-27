@@ -520,6 +520,24 @@ namespace DarkEnergy.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Currency_Coins {
+            get {
+                return ResourceManager.GetString("Currency_Coins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DC.
+        /// </summary>
+        public static string Currency_DarkCrystals {
+            get {
+                return ResourceManager.GetString("Currency_DarkCrystals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DELETE.
         /// </summary>
         public static string DeleteCharacter {
@@ -997,6 +1015,15 @@ namespace DarkEnergy.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Buy.
+        /// </summary>
+        public static string Item_Buy {
+            get {
+                return ResourceManager.GetString("Item_Buy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Item_Delete {
@@ -1020,6 +1047,15 @@ namespace DarkEnergy.Resources {
         public static string Item_Equipped {
             get {
                 return ResourceManager.GetString("Item_Equipped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sell.
+        /// </summary>
+        public static string Item_Sell {
+            get {
+                return ResourceManager.GetString("Item_Sell", resourceCulture);
             }
         }
         
@@ -1398,6 +1434,24 @@ namespace DarkEnergy.Resources {
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buy.
+        /// </summary>
+        public static string TradingBuy {
+            get {
+                return ResourceManager.GetString("TradingBuy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sell.
+        /// </summary>
+        public static string TradingSell {
+            get {
+                return ResourceManager.GetString("TradingSell", resourceCulture);
             }
         }
         

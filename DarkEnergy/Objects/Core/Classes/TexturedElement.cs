@@ -69,17 +69,40 @@ namespace DarkEnergy
 
         public string Path { get; set; }
 
-        public TexturedElement(int width, int height) : base() { this.width = width; this.height = height; }
+        public TexturedElement(int width, int height) : base()
+        {
+            absoluteWidth = width;
+            absoluteHeight = height;
+        }
 
-        public TexturedElement(int width, int height, Vector2 position) : base(position) { this.width = width; this.height = height; }
+        public TexturedElement(int width, int height, Vector2 position) : base(position)
+        {
+            absoluteWidth = width;
+            absoluteHeight = height;
+        }
 
-        public TexturedElement(int width, int height, float x, float y) : base(x, y) { this.width = width; this.height = height; }
+        public TexturedElement(int width, int height, float x, float y) : base(x, y)
+        {
+            absoluteWidth = width;
+            absoluteHeight = height;
+        }
 
-        public TexturedElement(int width, int height, HorizontalAlignment horizontalAlignment, float horizontalOffset, float y) : base(horizontalAlignment, horizontalOffset, y) { this.width = width; this.height = height; }
+        public TexturedElement(int width, int height, HorizontalAlignment horizontalAlignment, float horizontalOffset, float y) : base(horizontalAlignment, horizontalOffset, y)
+        {
+            absoluteWidth = width;
+            absoluteHeight = height;
+        }
 
-        public TexturedElement(int width, int height, float x, VerticalAlignment verticalAlignment, float verticalOffset) : base(x, verticalAlignment, verticalOffset) { this.width = width; this.height = height; }
-
-        public TexturedElement(int width, int height, HorizontalAlignment horizontalAlignment, float horizontalOffset, VerticalAlignment verticalAlignment, float verticalOffset) : base(horizontalAlignment, horizontalOffset, verticalAlignment, verticalOffset) { this.width = width; this.height = height; }
+        public TexturedElement(int width, int height, float x, VerticalAlignment verticalAlignment, float verticalOffset) : base(x, verticalAlignment, verticalOffset)
+        {
+            absoluteWidth = width;
+            absoluteHeight = height;
+        }
+        public TexturedElement(int width, int height, HorizontalAlignment horizontalAlignment, float horizontalOffset, VerticalAlignment verticalAlignment, float verticalOffset) : base(horizontalAlignment, horizontalOffset, verticalAlignment, verticalOffset)
+        {
+            absoluteWidth = width;
+            absoluteHeight = height;
+        }
 
         protected void ChangeNativeSize(int width, int height)
         {

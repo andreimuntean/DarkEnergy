@@ -6,8 +6,6 @@ using DarkEnergy.Abilities;
 
 namespace DarkEnergy.Characters
 {
-    // Status = How are you? Answer: Banned, Happy, Mișteaux.
-    // State = What are you doing? Attack(ing), Stand(ing).
     public enum CharacterState { Stand = 0, Charge = 1, Attack = 2, Retreat = 3, CastTarget = 4, CastSelf = 5 }
     
     public abstract class Character : TexturedElement

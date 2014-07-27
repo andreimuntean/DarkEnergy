@@ -15,14 +15,14 @@ namespace DarkEnergy.Characters
         Fire = 7, Shock = 8
     }
 
-    static class Resistances
+    public static class Resistances
     {
         public static float GetModifier(Element source, Element target)
         {
             if (source == Element.None || target == Element.None)
                 return 1.0f;
 
-            #region Magic. SPOILER
+            #region Magic
             // It figures out the modifier based on the cyclic structure of
             // the Element enum. The absolute operation finds the distance on
             // the Element circle between the source and the target. The

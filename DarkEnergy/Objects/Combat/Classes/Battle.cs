@@ -234,11 +234,7 @@ namespace DarkEnergy.Combat
 
         public void OnBackKeyPress()
         {
-            if (State == BattleState.Acting)
-            {
-                paused = true;
-            }
-            else if (State == BattleState.Waiting)
+            if (State == BattleState.Waiting)
             {
                 if (Units.Actions.Count > 0)
                 {
@@ -252,8 +248,16 @@ namespace DarkEnergy.Combat
                     return;
                 }
             }
+            else paused = !paused;
 
-            exitMenu.Show(Resources.Strings.CombatExitConfirmationLine1 + "\n" + Resources.Strings.CombatExitConfirmationLine2, new string[] { Resources.Strings.Yes, Resources.Strings.No });
+            if (exitMenu.Visible)
+            {
+                exitMenu.Hide();
+            }
+            else
+            {
+                exitMenu.Show(Resources.Strings.CombatExitConfirmationLine1 + "\n" + Resources.Strings.CombatExitConfirmationLine2, new string[] { Resources.Strings.Yes, Resources.Strings.No });
+            }
         }
         #endregion
     }

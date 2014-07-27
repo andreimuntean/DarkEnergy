@@ -11,10 +11,10 @@ namespace DarkEnergy.Inventory
         protected List<int> idList;
 
         protected const int maximumCapacity = 255;
-        protected const int maximumCurrency = 2000000000;
+        protected const int maximumCoins = 2000000000;
         protected const int maximumDarkCrystals = 2000000000;
         protected int capacity;
-        protected int currency;
+        protected int coins;
         protected int darkCrystals;
 
         public int Capacity
@@ -30,16 +30,16 @@ namespace DarkEnergy.Inventory
             }
         }
 
-        public int Currency
+        public int Coins
         {
-            get { return currency; }
+            get { return coins; }
             set
             {
-                if (value <= maximumCurrency)
+                if (value <= maximumCoins)
                 {
-                    currency = value;
+                    coins = value;
                 }
-                else currency = maximumCurrency;
+                else coins = maximumCoins;
             }
         }
 
@@ -95,6 +95,24 @@ namespace DarkEnergy.Inventory
             return itemList.Contains(item);
         }
 
+        public bool CanAdd(IItem item, int count = 1)
+        {
+            count -= (Capacity - Count) * item.StackLimit;
+
+            if (count <= 0) return true;
+
+            foreach (var i in itemList)
+            {
+                if (i == item)
+                {
+                    count -= (i.StackLimit - i.Count);
+                    if (count <= 0) return true;
+                }
+            }
+
+            return false;
+        }
+
         public bool IsUnique(int id, int count = 1)
         {
             bool result = false;
@@ -138,18 +156,6 @@ namespace DarkEnergy.Inventory
             foreach (var i in Equipment.ToList())
             {
                 if (i == item)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool IsEquipped(int id)
-        {
-            foreach (var i in Equipment.GetIdList())
-            {
-                if (i == id)
                 {
                     return true;
                 }
@@ -216,14 +222,24 @@ namespace DarkEnergy.Inventory
 
         public void Equip(Equipment target, params EquippableItem[] items)
         {
-            var ids = new List<int>();
-            
             foreach (var item in items)
             {
-                ids.Add(GetId(item));
-            }
+                string itemSlot = item.GetType().Name;
 
-            Equip(target, ids.ToArray());
+                switch (itemSlot)
+                {
+                    case "Weapon": target.Weapon = item as Weapon; break;
+                    case "Relic": target.Relic = item as Relic; break;
+                    case "Head": target.Head = item as Head; break;
+                    case "Neck": target.Neck = item as Neck; break;
+                    case "Chest": target.Chest = item as Chest; break;
+                    case "Back": target.Back = item as Back; break;
+                    case "Hands": target.Hands = item as Hands; break;
+                    case "Finger": target.Finger = item as Finger; break;
+                    case "Legs": target.Legs = item as Legs; break;
+                    case "Feet": target.Feet = item as Feet; break;
+                }
+            }
         }
 
         public void Equip(Equipment target, params int[] ids)
@@ -264,7 +280,7 @@ namespace DarkEnergy.Inventory
         {
             idList = new List<int>();
             itemList = new List<IItem>();
-            Currency = 0;
+            Coins = 0;
             DarkCrystals = 0;
             Equipment.Clear();
         }
@@ -308,19 +324,21 @@ namespace DarkEnergy.Inventory
         {
             if (id > 0)
             {
-                if (IsUnique(id) && IsEquipped(id))
-                {
-                    return false;
-                }
-
                 for (var i = Count - 1; i >= 0; --i)
                 {
                     if (idList[i] == id)
                     {
+                        var item = itemList[i];
+                        
+                        if (item is EquippableItem && IsEquipped(item as EquippableItem))
+                        {
+                            continue;
+                        }
+
                         var difference = count - itemList[i].Count;
 
-                        itemList[i].Count -= count;
-                        if (itemList[i].Count < 1)
+                        item.Count -= count;
+                        if (item.Count < 1)
                         {
                             idList.RemoveAt(i);
                             itemList.RemoveAt(i);
@@ -343,7 +361,7 @@ namespace DarkEnergy.Inventory
         {
             Clear();
             Capacity = DataStorageManager.Load<int>("InventoryCapacity");
-            Currency = DataStorageManager.Load<int>("InventoryCurrency");
+            Coins = DataStorageManager.Load<int>("InventoryCurrency");
             DarkCrystals = DataStorageManager.Load<int>("InventoryDarkCrystals");
             idList = DataStorageManager.Load<List<int>>("InventoryIdList");
 
@@ -359,7 +377,7 @@ namespace DarkEnergy.Inventory
         {
             DataStorageManager.Save(idList, "InventoryIdList");
             DataStorageManager.Save(Capacity, "InventoryCapacity");
-            DataStorageManager.Save(Currency, "InventoryCurrency");
+            DataStorageManager.Save(Coins, "InventoryCurrency");
             DataStorageManager.Save(DarkCrystals, "InventoryDarkCrystals");
             Equipment.SaveData();
         }

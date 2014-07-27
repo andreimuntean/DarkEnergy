@@ -2,12 +2,12 @@
 <items>
   <item id="140000">
     <name language="en-US">Dark Cloth Shirt</name>
-    <value>1</value>
+    <value>20</value>
     <attributes armor="2" strength="0" intuition="0" reflexes="0" vitality="1" vigor="0" />
   </item>
   <item id="140001">
     <name language="en-US">Light Cloth Shirt</name>
-    <value>1</value>
+    <value>20</value>
     <attributes armor="2" strength="0" intuition="0" reflexes="0" vitality="1" vigor="0" />
   </item>
   <item id="140002">

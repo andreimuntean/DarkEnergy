@@ -8,7 +8,7 @@ using DarkEnergy.Inventory;
 
 namespace DarkEnergy.Characters.Hero
 {
-    public class Hero : Character
+    public sealed class Hero : Character
     {
         public Features Features { get; set; }
         public Equipment Equipment { get; set; }

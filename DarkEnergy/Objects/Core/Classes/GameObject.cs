@@ -229,36 +229,36 @@ namespace DarkEnergy
 
         public GameObject(Vector2 position)
         {
-            this.x = position.X;
-            this.y = position.Y;
+            absoluteX = position.X;
+            absoluteY = position.Y;
         }
 
         public GameObject(float x, float y)
         {
-            this.x = x;
-            this.y = y;
+            absoluteX = x;
+            absoluteY = y;
         }
 
         public GameObject(HorizontalAlignment horizontalAlignment, float horizontalOffset, float y)
         {
             this.HorizontalAlignment = horizontalAlignment;
-            this.x = horizontalOffset;
-            this.y = y;
+            absoluteX = horizontalOffset;
+            absoluteY = y;
         }
 
         public GameObject(float x, VerticalAlignment verticalAlignment, float verticalOffset)
         {
             this.VerticalAlignment = verticalAlignment;
-            this.x = x;
-            this.y = verticalOffset;
+            absoluteX = x;
+            absoluteY = verticalOffset;
         }
 
         public GameObject(HorizontalAlignment horizontalAlignment, float horizontalOffset, VerticalAlignment verticalAlignment, float verticalOffset)
         {
             this.HorizontalAlignment = horizontalAlignment;
             this.VerticalAlignment = verticalAlignment;
-            this.x = horizontalOffset;
-            this.y = verticalOffset;
+            absoluteX = horizontalOffset;
+            absoluteY = verticalOffset;
         }
 
         public virtual void Initialize()

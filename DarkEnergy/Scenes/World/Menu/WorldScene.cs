@@ -21,7 +21,6 @@ namespace DarkEnergy.Scenes.World
             InventoryButton = new TexturedElement(100, 100, HorizontalAlignment.Center, -150, VerticalAlignment.Bottom, -20f) { Parent = this, Path = @"Interface\World\InventoryIcon.dds" };
             CodexButton = new TexturedElement(100, 100, HorizontalAlignment.Center, 150, VerticalAlignment.Bottom, -20f) { Parent = this, Path = @"Interface\World\CodexIcon.dds" };
             ExitMenu = new ExitMenu();
-            SaveData();
         }
 
         public override void Initialize()
@@ -32,6 +31,7 @@ namespace DarkEnergy.Scenes.World
             InventoryButton.Initialize();
             CodexButton.Initialize();
             ExitMenu.Initialize();
+            SaveData();
         }
 
         public override void LoadContent(ContentManager contentManager)
@@ -48,18 +48,9 @@ namespace DarkEnergy.Scenes.World
         {
             ExitMenu.Update(gameTime);
 
-            if (CharacterButton.Tapped)
-            {
-                SceneManager.Play(new Menu.CharacterMenu(this));
-            }
-            else if (InventoryButton.Tapped)
-            {
-                SceneManager.Play(new Menu.InventoryMenu(this));
-            }
-            else if (CodexButton.Tapped)
-            {
-                SceneManager.Play(new Menu.CodexMenu(this));
-            }
+            TouchManager.OnTap(CharacterButton, () => SceneManager.Play(new Menu.CharacterMenu(this)));
+            TouchManager.OnTap(InventoryButton, () => SceneManager.Play(new Menu.InventoryMenu(this)));
+            TouchManager.OnTap(CodexButton, () => SceneManager.Play(new Menu.CodexMenu(this)));
         }
 
         public override void Draw(Renderer renderer)

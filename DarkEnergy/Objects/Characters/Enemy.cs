@@ -8,7 +8,7 @@ using DarkEnergy.Combat;
 
 namespace DarkEnergy.Characters
 {
-    public class Enemy : Character
+    public sealed class Enemy : Character
     {
         public int Currency { get; set; }
         public int Experience { get; set; }
