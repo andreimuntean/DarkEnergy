@@ -90,6 +90,8 @@ namespace DarkEnergy.Scenes
                     {
                         GameManager.Inventory.DarkCrystals -= price.Value;
                     }
+
+                    RefreshPriceColor();
                 }
                 else
                 {
@@ -126,15 +128,19 @@ namespace DarkEnergy.Scenes
 
         public bool CanBuy(IItem item)
         {
-            var price = PriceOf(item);
+            if (item != null)
+            {
+                var price = PriceOf(item);
 
-            if (price.Currency == Currency.Coins)
-            {
-                return price.Value <= GameManager.Inventory.Coins;
-            }
-            else if (price.Currency == Currency.DarkCrystals)
-            {
-                return price.Value <= GameManager.Inventory.DarkCrystals;
+                if (price.Currency == Currency.Coins)
+                {
+                    return price.Value <= GameManager.Inventory.Coins;
+                }
+                else if (price.Currency == Currency.DarkCrystals)
+                {
+                    return price.Value <= GameManager.Inventory.DarkCrystals;
+                }
+                else return false;
             }
             else return false;
         }
@@ -152,6 +158,15 @@ namespace DarkEnergy.Scenes
             Viewer.Deselect();
             Controller.Deselect();
             cost.String = "";
+        }
+
+        public void RefreshPriceColor()
+        {
+            if (CanBuy(SelectedItem))
+            {
+                cost.Color = new Color(255, 255, 255);
+            }
+            else cost.Color = new Color(255, 100, 100); 
         }
 
         public override void Initialize()
@@ -248,11 +263,7 @@ namespace DarkEnergy.Scenes
                     cost.String += Resources.Strings.Currency_DarkCrystals;
                 }
 
-                if (CanBuy(SelectedItem))
-                {
-                    cost.Color = new Color(255, 255, 255);
-                }
-                else cost.Color = new Color(255, 100, 100); 
+                RefreshPriceColor();
             }
             else
             {

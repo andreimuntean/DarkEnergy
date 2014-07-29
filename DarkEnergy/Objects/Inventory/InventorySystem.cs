@@ -56,6 +56,7 @@ namespace DarkEnergy.Inventory
             }
         }
 
+        public List<int> IdList { get { return idList; } }
         public List<IItem> Items { get { return itemList; } }
         public int Count { get { return Items.Count; } }
         public Equipment Equipment { get; protected set; }

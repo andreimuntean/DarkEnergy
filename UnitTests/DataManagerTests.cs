@@ -17,7 +17,7 @@ namespace UnitTests
             Assert.IsNotNull(ability, "DataManager could not load an ability.");
 
             ability = DataManager.Load<Ability>(-1);
-           Assert.IsNull(ability, "DataManager incorrectly loads abilities.");
+            Assert.IsNull(ability, "DataManager incorrectly loads abilities.");
         }
 
         [TestMethod]
