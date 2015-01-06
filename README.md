@@ -1,5 +1,6 @@
 Dark Energy
 ==========
+(This is an excerpt from the game documentation found in Misc/Documentation.pdf) 
 Dark Energy is a turn-based role-playing game (RPG) designed for mobile devices. It allows the player to assume
 the role of a heroic character and explore a virtual world based in a high fantasy setting.
 
@@ -11,7 +12,7 @@ developer with a high-performance game design framework that employs an intuitiv
 centered on a variety of well-known design patterns.
 
 ###Technology
-Dark Energy is written in C# with XAML in Visual Studio 2013. The SharpDX[3] framework is used in order to
+Dark Energy is written in C# with XAML in Visual Studio 2013. The SharpDX[1] framework is used in order to
 access the power of DirectX technology. Data that loads at runtime is stored in XML files.
 
 ###Justification
@@ -29,7 +30,8 @@ and Android applications, this is no longer the case.
 Reflection is thoroughly used throughout the project. This provides a beneficial trade-off between
 computational speed and maintainability. Developer productivity and code simplicity is increased as objects can
 be loaded and instantiated at runtime by merely passing an ID through a method (see DataManager).
-XML
+
+####XML
 Regarding content management, the decision to store data in the XML format as opposed to JSON was
 ultimately influenced by maintainability. XML files are easier to interpret by humans and the slightly larger space
 they occupy is computationally negligible.
@@ -59,3 +61,6 @@ alter its behavior without resorting to massive conditional statements.
 ####Type
 Similar entities share the same behavior without having to designate any separate classes. For example, all
 enemies use a single class called Enemy.
+
+##References
+[1] http://sharpdx.org/download/
