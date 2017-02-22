@@ -63,4 +63,4 @@ Similar entities share the same behavior without having to designate any separat
 enemies use a single class called Enemy.
 
 ##References
-[1] http://sharpdx.org/download/
+[1] http://sharpdx.org
